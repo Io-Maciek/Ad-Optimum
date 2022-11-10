@@ -1,14 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [Tooltip("Maximum slope the character can jump on")]
     [Range(5f, 60f)]
     public float slopeLimit = 45f;
 
-    public float speed = 10.0f;
+    [Tooltip("Default player speed")]
+    public float normalSpeed = 7.0f;
+    [Tooltip("*Additional* speed when player is running (Sprint Asix)")]
+    public float runAddition = 8.0f;
+
+    public float jumpHeight = 10.0f;
+
     Rigidbody rb;
     new CapsuleCollider collider;
 
@@ -27,11 +33,14 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        //TODO movement
-        //rb.velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed* Time.deltaTime;
-        if (OnGround)
+        var speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
+        Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
+
+        rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
+        if (OnGround && Input.GetAxis("Jump")>0.0)
         {
-            //TODO jumping
+            OnGround = false;
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
         }
     }
 
@@ -43,8 +52,8 @@ public class Movement : MonoBehaviour
     /// </summary>
     private bool IsOnGround()
     {
-        float capsuleHeight = Mathf.Max(collider.radius * 2f, collider.height);
-        Vector3 capsuleBottom = transform.TransformPoint(collider.center - Vector3.up * capsuleHeight / 2f);
+        float height = Mathf.Max(collider.radius * 2f, collider.height);
+        Vector3 capsuleBottom = transform.TransformPoint(collider.center - Vector3.up * height / 2f);
         float radius = transform.TransformVector(collider.radius, 0f, 0f).magnitude;
         Ray ray = new Ray(capsuleBottom + transform.up * .01f, -transform.up);
         RaycastHit hit;
