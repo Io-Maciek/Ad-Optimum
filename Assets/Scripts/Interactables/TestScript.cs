@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript : Interactable<bool>
+public class TestScript : Interactable
 {
-    public override bool Action(params object[] args)
+    public override Result<string> Action(params object[] args)
     {
         Debug.Log("Jestem tu!");
-        return true;
+        return Result<string>.Ok();
     }
 }

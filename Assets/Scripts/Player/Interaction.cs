@@ -25,14 +25,23 @@ public class Interaction : MonoBehaviour
             KeyPressedDown = true;
             Ray ray = new Ray(camera.position, camera.forward);
             if (showDebugRay)
-                Debug.DrawRay(camera.position, camera.forward * interactionMaxDistance, Color.red,2);
+                Debug.DrawRay(camera.position, camera.forward * interactionMaxDistance, Color.red, 2);
             RaycastHit hit;
-            if(Physics.Raycast(ray,out hit, interactionMaxDistance))
+            if (Physics.Raycast(ray, out hit, interactionMaxDistance))
             {
                 GameObject obj = hit.collider.gameObject;
-                if(obj.tag == "Interactable")
+                if (obj.tag == "Interactable")
                 {
-                    obj.GetComponent<Interactable<bool>>().Action(gameObject);
+                    obj.GetComponent<Interactable>().Action(gameObject).Match(
+                        () =>//OK
+                        {
+                            Debug.Log("OK");
+                        },
+                        (err) =>//ERR
+                        {
+                            Debug.LogWarning(err);
+                        }
+                    );
                 }
             }
         }
