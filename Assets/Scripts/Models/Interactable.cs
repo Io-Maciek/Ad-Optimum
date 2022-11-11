@@ -5,8 +5,17 @@ using UnityEngine;
 /// <summary>
 /// Intended to use on object with 'Interactable' tag. Fires the <see cref="Action(object[])"/> method when player interacts with it.
 /// </summary>
-public abstract class Interactable<T> : MonoBehaviour
+public abstract class Interactable<T> : MonoBehaviour// TODO implement OK/Error returning for error handling
 {
+    void Awake()
+    {
+        if (gameObject.tag != "Interactable")
+        {
+            Debug.LogWarning($"Object {gameObject} has not set tag 'Interactable'");
+            gameObject.tag = "Interactable";
+        }
+    }
+
     /// <summary>
     /// Starts when players interacts with object with game object with 'Interactable' tag.
     /// </summary>

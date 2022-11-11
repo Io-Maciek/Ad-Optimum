@@ -11,9 +11,9 @@ public class Movement : MonoBehaviour
     [Tooltip("Default player speed")]
     public float normalSpeed = 7.0f;
     [Tooltip("*Additional* speed when player is running (Sprint Asix)")]
-    public float runAddition = 8.0f;
+    public float runAddition = 7.0f;
 
-    public float jumpHeight = 10.0f;
+    public float jumpHeight = 3.5f;
 
     Rigidbody rb;
     new CapsuleCollider collider;
