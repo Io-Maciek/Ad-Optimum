@@ -1,4 +1,5 @@
 using System;
+using static UnityEditor.Progress;
 
 /// <summary>
 /// Class that handles return values in <see href="https://www.rust-lang.org/">Rust</see>-Like style from methods in form of <see cref="Ok"/> and <see cref="Err(E)"/> using method <see cref="Match(System.Action, System.Action{E})"/>.
@@ -39,7 +40,19 @@ public class Result<E>
     }
 
     /// <summary>
-    /// Method that allows for conditional method initializer if passed values was ERR.
+    /// Method that allows for conditional method initializer if passed value was OK.
+    /// </summary>
+    /// <param name="OkHandler">Starts if valies was passed via <see cref="Ok"/></param>
+    public void Match(Action OkHandler)
+    {
+        if (IsOk)
+        {
+            OkHandler();
+        }
+    }
+
+    /// <summary>
+    /// Method that allows for conditional method initializer if passed value was ERR.
     /// </summary>
     /// <param name="ErrorHandler">Starts if valies was passed via <see cref="Err(E)"/></param>
     public void Match(Action<E> ErrorHandler)
@@ -133,7 +146,7 @@ public class Result<T, E>
     }
 
     /// <summary>
-    /// Method that allows for conditional method initializer if passed values was ERR.
+    /// Method that allows for conditional method initializer if passed value was ERR.
     /// </summary>
     /// <param name="ErrorHandler">Starts if valies was passed via <see cref="Err(E)"/></param>
     public void Match(Action<E> ErrorHandler)
@@ -145,19 +158,19 @@ public class Result<T, E>
     }
 
     /// <summary>
-    /// Method that allows for conditional method initializer if passed values was ERR.
+    /// Method that allows for conditional method initializer if passed value was OK.
     /// </summary>
     /// <param name="OkHandler">Starts if valies was passed via <see cref="Ok(T)"/></param>
     public void Match(Action<T> OkHandler)
     {
-        if (!IsOk)
+        if (IsOk)
         {
             OkHandler(OkItem);
         }
     }
 
     /// <summary>
-    /// Method that allows for conditional method initializer dependent on passed value - OK or ERR.
+    /// Method that allows for conditional method initializer dependent on passed values - OK or ERR.
     /// </summary>
     /// <param name="OkHandler">Starts if value was passed via <see cref="Ok(T)"/></param>
     /// <param name="ErrorHandler">Starts if valies was passed via <see cref="Err(E)"/></param>
@@ -178,12 +191,15 @@ public class Result<T, E>
     /// </summary>
     public Result<E> IgnoreOk()
     {
-        return this;
+        if (IsOk)
+            return Result<E>.Ok();
+        else
+            return Result<E>.Err(ErrorItem);
     }
 
     public static implicit operator Result<E>(Result<T, E> _this)
     {
-        return Result<E>.Err(_this.ErrorItem);
+        return _this.IgnoreOk();
     }
 
 
