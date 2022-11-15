@@ -32,10 +32,14 @@ public class Interaction : MonoBehaviour
                 GameObject obj = hit.collider.gameObject;
                 if (obj.tag == "Interactable")
                 {
-                    obj.GetComponent<Interactable>().Action(gameObject).Match((err) => 
-                    {
-                        Debug.LogWarning(err);
-                    });
+                    obj.GetComponent<Interactable>().Action(gameObject).Match(
+                        (obj) =>
+                        {
+                        },
+                        (err) =>
+                        {
+                            Debug.LogWarning(err);
+                        });
                 }
             }
         }
