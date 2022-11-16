@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
 
     public float jumpHeight = 3.5f;
 
+    public float crouchSpeed = 3.5f;
+
     Rigidbody rb;
     new CapsuleCollider collider;
 
@@ -33,7 +35,18 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        var speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
+        var speedOfThatBoy = 0f;
+        if (Input.GetAxis("Crouch") == 0)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
+        }
+        else
+        {
+            speedOfThatBoy = crouchSpeed;
+            transform.localScale = new Vector3(1f, 0.8f, 1f);
+        }
+        
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
 
         rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
