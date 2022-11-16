@@ -11,6 +11,7 @@ public class Interaction : MonoBehaviour
     public float interactionMaxDistance = 5.0f;
     public bool showDebugRay = false;
 
+    GameObject usedObject = null;
 
     void Start()
     {
@@ -23,24 +24,44 @@ public class Interaction : MonoBehaviour
         if (!KeyPressedDown && Input.GetAxis("Use") >= .97)
         {
             KeyPressedDown = true;
-            Ray ray = new Ray(camera.position, camera.forward);
-            if (showDebugRay)
-                Debug.DrawRay(camera.position, camera.forward * interactionMaxDistance, Color.red, 2);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactionMaxDistance))
+            Debug.Log(usedObject);
+            if (usedObject==null)
             {
-                GameObject obj = hit.collider.gameObject;
-                if (obj.tag == "Interactable")
+                Ray ray = new Ray(camera.position, camera.forward);
+                if (showDebugRay)
+                    Debug.DrawRay(camera.position, camera.forward * interactionMaxDistance, Color.red, 2);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, interactionMaxDistance))
                 {
-                    obj.GetComponent<Interactable>().Action(gameObject).Match(
-                        (obj) =>
+                    GameObject obj = hit.collider.gameObject;
+                    if (obj.tag == "Interactable")
+                    {
+                        Holding holder = obj.GetComponent<Holding>();
+                        if (holder != null)
                         {
-                        },
-                        (err) =>
+                            usedObject = holder.Action(gameObject).GetOk() as GameObject;
+                        }
+                        else
                         {
-                            Debug.LogWarning(err);
-                        });
+                            obj.GetComponent<Interactable>().Action(gameObject).Match(
+                              (obj) =>
+                              {
+                              },
+                              (err) =>
+                              {
+                                  Debug.LogWarning(err);
+                              });
+                        }
+                    }
                 }
+            }
+            else
+            {
+                usedObject.transform.parent = null;
+                usedObject.GetComponent<Holding>().isBeingHold = false;
+                usedObject.GetComponent<Rigidbody>().useGravity = true;
+                usedObject.GetComponent<Rigidbody>().detectCollisions = true;
+                usedObject = null;
             }
         }
         else if (KeyPressedDown && Input.GetAxis("Use") == 0.0)

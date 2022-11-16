@@ -10,7 +10,6 @@ public class MouseLooking : MonoBehaviour
     [Range(0f, 10f)]
     public float sensitivity = 2.0f;
 
-
     void Start()
     {
         camera = transform.Find("PlayerCamera").transform;
