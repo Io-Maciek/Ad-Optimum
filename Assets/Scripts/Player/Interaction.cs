@@ -11,7 +11,7 @@ public class Interaction : MonoBehaviour
     public float interactionMaxDistance = 5.0f;
     public bool showDebugRay = false;
 
-    GameObject usedObject = null;
+    Holding usedObject = null;
 
     void Start()
     {
@@ -24,8 +24,7 @@ public class Interaction : MonoBehaviour
         if (!KeyPressedDown && Input.GetAxis("Use") >= .97)
         {
             KeyPressedDown = true;
-            Debug.Log(usedObject);
-            if (usedObject==null)
+            if (usedObject == null)
             {
                 Ray ray = new Ray(camera.position, camera.forward);
                 if (showDebugRay)
@@ -36,10 +35,10 @@ public class Interaction : MonoBehaviour
                     GameObject obj = hit.collider.gameObject;
                     if (obj.tag == "Interactable")
                     {
-                        Holding holder = obj.GetComponent<Holding>();
-                        if (holder != null)
+                        usedObject = obj.GetComponent<Holding>();
+                        if (usedObject != null)
                         {
-                            usedObject = holder.Action(gameObject).GetOk() as GameObject;
+                            usedObject.Action(gameObject).GetOk();
                         }
                         else
                         {
@@ -57,10 +56,7 @@ public class Interaction : MonoBehaviour
             }
             else
             {
-                usedObject.transform.parent = null;
-                usedObject.GetComponent<Holding>().isBeingHold = false;
-                usedObject.GetComponent<Rigidbody>().useGravity = true;
-                usedObject.GetComponent<Rigidbody>().detectCollisions = true;
+                usedObject.LetItGo();
                 usedObject = null;
             }
         }
