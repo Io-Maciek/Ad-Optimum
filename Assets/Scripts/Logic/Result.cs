@@ -82,6 +82,25 @@ public class Result<E>
 
 
     /// <summary>
+    /// Method that allows for conditional method initializer dependent on passed value - OK or ERR.
+    /// </summary>
+    /// <param name="OkHandler">Starts if value was passed via <see cref="Ok"/></param>
+    /// <param name="ErrorHandler">Starts if valies was passed via <see cref="Err(E)"/></param>
+    /// <returns>Object of type <typeparamref name="R"/></returns>
+    public R Match<R>(Func<R> OkHandler, Func<E, R> ErrorHandler)
+    {
+        if (IsOk)
+        {
+            return OkHandler();
+        }
+        else
+        {
+            return ErrorHandler(ErrorItem);
+        }
+    }
+
+
+    /// <summary>
     /// Gets ERR value <typeparamref name="E"/>. Implicit casting is allowed.
     /// <para>
     /// Throws <see cref="InvalidCastException"/> if its value is OK.
@@ -169,6 +188,7 @@ public class Result<T, E>
         }
     }
 
+
     /// <summary>
     /// Method that allows for conditional method initializer dependent on passed values - OK or ERR.
     /// </summary>
@@ -183,6 +203,24 @@ public class Result<T, E>
         else
         {
             ErrorHandler(ErrorItem);
+        }
+    }
+
+    /// <summary>
+    /// Method that allows for conditional method initializer dependent on passed values - OK or ERR.
+    /// </summary>
+    /// <param name="OkHandler">Starts if value was passed via <see cref="Ok(T)"/></param>
+    /// <param name="ErrorHandler">Starts if valies was passed via <see cref="Err(E)"/></param>
+    /// <returns>Object of type <typeparamref name="R"/></returns>
+    public virtual R Match<R>(Func<T, R> OkHandler, Func<E, R> ErrorHandler)
+    {
+        if (IsOk)
+        {
+            return OkHandler(OkItem);
+        }
+        else
+        {
+            return ErrorHandler(ErrorItem);
         }
     }
 

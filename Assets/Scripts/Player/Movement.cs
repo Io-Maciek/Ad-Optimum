@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        var speedOfThatBoy = 0f;
+        float speedOfThatBoy = 0f;
         if (Input.GetAxis("Crouch") == 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
         else
         {
             speedOfThatBoy = crouchSpeed;
-            transform.localScale = new Vector3(1f, 0.8f, 1f);
+            transform.localScale = new Vector3(1f, 0.8f, 1f);//TODO inaczej, zniekszta³ca trzymane przedmioty
         }
         
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
