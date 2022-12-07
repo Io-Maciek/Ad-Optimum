@@ -1,13 +1,29 @@
+using Assets.Scripts.Logic.GameSaves;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlanszaInfo : MonoBehaviour
 {
     public uint ProgressValue { get; private set; } = 0;
+    public List<SavingTrigger> EYE_OF_THE_TRIGGER; 
 
     void Start()
     {
+        SavingTrigger last_seen = EYE_OF_THE_TRIGGER.Where(x => x.ProgressValue == ApplicationModelInfo.GameSave.ProgressValue).First();
+        if(last_seen == null)
+        {
+            ApplicationModelInfo.GameSave.SceneID = (uint)SceneManager.GetActiveScene().buildIndex;
+            ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
+        }
+        else
+        {
+            ApplicationModelInfo.GameSave.SceneID = (uint)SceneManager.GetActiveScene().buildIndex;
+            ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
+            GameObject.Find("Player").transform.position = last_seen.tp_home;
+        }
         
     }
 
@@ -21,7 +37,9 @@ public class PlanszaInfo : MonoBehaviour
         if (NewProgressValue > ProgressValue)
         {
             ProgressValue = NewProgressValue;
-            //Debug.Log($"Updated to {ProgressValue}");
+            ApplicationModelInfo.GameSave.ProgressValue = ProgressValue;
+            ApplicationModelInfo.GameSave.Save();
+            Debug.Log($"Updated to {ProgressValue}");
         }
         else
         {

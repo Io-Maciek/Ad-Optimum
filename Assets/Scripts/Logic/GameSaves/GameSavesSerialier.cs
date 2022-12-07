@@ -10,7 +10,7 @@ namespace Assets.Scripts.Logic.GameSaves
     public abstract class GameSavesSerialier
     {
         static string _DOC = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        static string _GAME = Path.Combine(_DOC, "Ad Optimum");
+        protected static string _GAME = Path.Combine(_DOC, "Ad Optimum");
 
         public abstract string pattern { get; }
 
@@ -28,6 +28,6 @@ namespace Assets.Scripts.Logic.GameSaves
         }
 
         public abstract List<GameSave> Read();
-        public abstract GameSave Overwrite();
+        public abstract void Overwrite(GameSave save);
     }
 }
