@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour
 
     public float crouchSpeed = 3.5f;
 
+    public float colliderSizeOnCrouch = 1.5f;
+
     Rigidbody rb;
     new CapsuleCollider collider;
 
@@ -44,7 +46,7 @@ public class Movement : MonoBehaviour
         else
         {
             speedOfThatBoy = crouchSpeed;
-            collider.height = 1.5f;
+            collider.height = colliderSizeOnCrouch;
         }
         
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
