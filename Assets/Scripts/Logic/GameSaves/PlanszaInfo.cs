@@ -1,4 +1,5 @@
 using Assets.Scripts.Logic.GameSaves;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,32 @@ public class PlanszaInfo : MonoBehaviour
 
     void Start()
     {
-        SavingTrigger last_seen = EYE_OF_THE_TRIGGER.Where(x => x.ProgressValue == ApplicationModelInfo.GameSave.ProgressValue).First();
-        if(last_seen == null)
+        SavingTrigger last_seen;
+        try
+        {
+            if (ApplicationModelInfo.GameSave.ProgressValue == 0)
+            {
+                last_seen = null;
+            }
+            else
+            {
+                last_seen = EYE_OF_THE_TRIGGER.Where(x => x.ProgressValue == ApplicationModelInfo.GameSave.ProgressValue).First();
+            }
+        }
+        catch (NullReferenceException)
+        {
+            ApplicationModelInfo.GameSave = new GameSave() { id = 999, ProgressValue = 0, SayMyName = "save_debug.io" };
+            if (ApplicationModelInfo.GameSave.ProgressValue == 0)
+            {
+                last_seen = null;
+            }
+            else
+            {
+                last_seen = EYE_OF_THE_TRIGGER.Where(x => x.ProgressValue == ApplicationModelInfo.GameSave.ProgressValue).First();
+            }
+        }
+
+        if (last_seen == null)
         {
             ApplicationModelInfo.GameSave.SceneID = (uint)SceneManager.GetActiveScene().buildIndex;
             ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
@@ -24,7 +49,7 @@ public class PlanszaInfo : MonoBehaviour
             ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
             GameObject.Find("Player").transform.position = last_seen.tp_home;
         }
-        
+        ApplicationModelInfo.GameSave.Save();
     }
 
     void Update()
