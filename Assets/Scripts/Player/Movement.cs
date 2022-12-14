@@ -38,13 +38,13 @@ public class Movement : MonoBehaviour
         var speedOfThatBoy = 0f;
         if (Input.GetAxis("Crouch") == 0)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            collider.height = 2f;
             speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
         }
         else
         {
             speedOfThatBoy = crouchSpeed;
-            transform.localScale = new Vector3(1f, 0.8f, 1f);
+            collider.height = 1.5f;
         }
         
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
