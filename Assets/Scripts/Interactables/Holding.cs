@@ -22,6 +22,7 @@ public class Holding : Interactable
             transform.parent = playerObject.transform.Find("PlayerCamera");
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().detectCollisions = false;
+            GetComponent<Rigidbody>().isKinematic = true;
             isBeingHold = true;
         }
 
@@ -35,6 +36,7 @@ public class Holding : Interactable
             isBeingHold = false;
             transform.parent = null;
             GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<Rigidbody>().detectCollisions = true;
             playerObject = null;
         }
