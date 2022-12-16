@@ -13559,11 +13559,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8203809195748524973, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8203809195748524975, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8203809195748524967, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
 --- !u!1001 &1217784709
 PrefabInstance:
@@ -14341,20 +14346,20 @@ Transform:
   - {fileID: 1730859927}
   - {fileID: 1959600411}
   - {fileID: 1485532418}
-  - {fileID: 1571329200}
-  - {fileID: 401012925}
-  - {fileID: 271960679}
-  - {fileID: 1419734200}
-  - {fileID: 498052728}
   - {fileID: 1275241601}
+  - {fileID: 401012925}
+  - {fileID: 1419734200}
+  - {fileID: 1571329200}
+  - {fileID: 271960679}
   - {fileID: 1923018938}
   - {fileID: 1473167118}
   - {fileID: 347078444}
-  - {fileID: 1856382239}
+  - {fileID: 817995056}
+  - {fileID: 498052728}
   - {fileID: 1746772193}
+  - {fileID: 1856382239}
   - {fileID: 260814496}
   - {fileID: 564229009}
-  - {fileID: 817995056}
   - {fileID: 1752065643}
   m_Father: {fileID: 438932807}
   m_RootOrder: 2

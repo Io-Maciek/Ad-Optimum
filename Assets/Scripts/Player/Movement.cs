@@ -37,16 +37,17 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        var speedOfThatBoy = 0f;
-        if (Input.GetAxis("Crouch") == 0)
-        {
-            collider.height = 2f;
-            speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
-        }
-        else
+        float speedOfThatBoy;
+        if (Input.GetAxis("Crouch") > 0)
         {
             speedOfThatBoy = crouchSpeed;
             collider.height = colliderSizeOnCrouch;
+            
+        }
+        else
+        {
+            collider.height = 2f;
+            speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
         }
         
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
