@@ -18,7 +18,7 @@ public abstract class Interactable : MonoBehaviour
     }
 
     /// <summary>
-    /// Starts when players interacts with object with game object with 'Interactable' tag.
+    /// Starts when players interacts with game object with 'Interactable' tag.
     /// </summary>
     /// <param name="args">List of parameters that can be passed to method for processing.</param>
     public abstract Result<object, string> Action(params object[] args);
