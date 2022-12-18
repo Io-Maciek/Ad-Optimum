@@ -217,7 +217,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 97a08ddeefb5f4d4282aa427b927bd6d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 77db987e49c808842be6903dc983f8f4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -614,7 +614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37037927, y: 0.41651917}
   m_AnchorMax: {x: 0.629, y: 0.5031897}
-  m_AnchoredPosition: {x: 0, y: 0.19998932}
+  m_AnchoredPosition: {x: 0, y: 0.19998169}
   m_SizeDelta: {x: 0, y: 0.02999878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319467027
@@ -910,6 +910,7 @@ GameObject:
   - component: {fileID: 944743035}
   - component: {fileID: 944743034}
   - component: {fileID: 944743036}
+  - component: {fileID: 944743037}
   m_Layer: 5
   m_Name: TitleLogo
   m_TagString: Untagged
@@ -990,6 +991,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &944743037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944743032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 1
+  m_AspectRatio: 1.105674
 --- !u!1 &1277786570
 GameObject:
   m_ObjectHideFlags: 0
