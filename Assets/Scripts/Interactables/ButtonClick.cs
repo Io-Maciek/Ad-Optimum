@@ -13,9 +13,9 @@ public class ButtonClick : Activator
     {
         if (!IsActive && (other.tag == "Player" || other.GetComponent<Holding>()))
         {
+            GetComponent<Animator>().SetBool("isActivated", true);
             IsActive = true;
             LoveConnections[0].SetTo(true);
-            Debug.Log(gameObject + "\tGuzik aktywny!");
         }
     }
 
@@ -23,11 +23,9 @@ public class ButtonClick : Activator
     {
         if (IsActive && (other.tag == "Player" || other.GetComponent<Holding>()))
         {
+            GetComponent<Animator>().SetBool("isActivated", false);
             IsActive = false;
             LoveConnections[0].SetTo(false);
-            Debug.Log(gameObject + "\tGuzik nieaktywny!");
         }
     }
-
-
 }

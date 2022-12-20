@@ -1841,7 +1841,7 @@ GameObject:
   - component: {fileID: 213270125}
   m_Layer: 0
   m_Name: bridgeTutorial
-  m_TagString: Untagged
+  m_TagString: Activatable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12976,7 +12976,7 @@ GameObject:
   - component: {fileID: 1114009732}
   m_Layer: 0
   m_Name: bridgePoziom0_1
-  m_TagString: Untagged
+  m_TagString: Activatable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14557,11 +14557,26 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8055730142327126580, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Size.x
+      value: 1.9
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8055730142327126580, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
+    - target: {fileID: 8055730142327126580, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055730142327126580, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
+      propertyPath: m_Size.z
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055730142327126580, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055730142327126580, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
 --- !u!4 &1190184649 stripped
 Transform:
@@ -15064,6 +15079,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2659655286232598632, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659655286232598632, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_Pitch
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659655286232598632, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659655286232598632, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 97a08ddeefb5f4d4282aa427b927bd6d, type: 3}
     - target: {fileID: 8203809194231645174, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -16989,6 +17020,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4310614304489658, guid: 5cbae0602ce9acf41a98fda3a353569a, type: 3}
   m_PrefabInstance: {fileID: 1305720865}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1308069979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1619558185565566, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
+  m_PrefabInstance: {fileID: 1190184648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1308069982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308069979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd6555f442ea554bac71ad3e62cf3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1322668772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20422,7 +20470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4838866880481952, guid: 13f1670c2e187874784d0f667f9057f5, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4838866880481952, guid: 13f1670c2e187874784d0f667f9057f5, type: 3}
       propertyPath: m_LocalScale.x
@@ -20910,6 +20958,7 @@ GameObject:
   - component: {fileID: 1595923922}
   - component: {fileID: 1595923925}
   - component: {fileID: 1595923926}
+  - component: {fileID: 1595923927}
   m_Layer: 0
   m_Name: przyciskTutorial
   m_TagString: Untagged
@@ -21020,6 +21069,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1.05, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1595923927
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595923920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d7c1cdd49ab445419f12dba9466c5d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1603441257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135533477319584, guid: 89843090f5c38c24c9500fe9490ba5c4, type: 3}
