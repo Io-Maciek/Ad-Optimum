@@ -7,6 +7,13 @@ public class Holding : Interactable
     public bool isBeingHold { get; private set; } = false;
     GameObject playerObject;
 
+    [Range(0f, 3.0f)]
+    public float howFar = 2.25f;
+    [Range(-1f, 1f)]
+    public float howDown = .2f;
+    [Range(0.0f, 1.0f)]
+    public float useScale = .8f;
+
     public override Result<object, string> Action(params object[] args)
     {
         if (playerObject == null)
@@ -24,6 +31,7 @@ public class Holding : Interactable
             GetComponent<Rigidbody>().detectCollisions = false;
             GetComponent<Rigidbody>().isKinematic = true;
             isBeingHold = true;
+            transform.localScale = new Vector3(useScale, useScale, useScale);
         }
 
         return Result<object, string>.Ok(gameObject);
@@ -39,6 +47,7 @@ public class Holding : Interactable
             GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<Rigidbody>().detectCollisions = true;
             playerObject = null;
+            transform.localScale = Vector3.one;
         }
     }
 
@@ -48,8 +57,11 @@ public class Holding : Interactable
         if (isBeingHold)
         {
             Vector3 joeBidenPosition = (playerObject.transform.Find("PlayerCamera").transform.position
-                + playerObject.transform.Find("PlayerCamera").transform.forward * 2);
+                + playerObject.transform.Find("PlayerCamera").transform.forward * howFar)+Vector3.down*howDown;
             transform.position = joeBidenPosition;
         }
     }
+
+
+
 }
