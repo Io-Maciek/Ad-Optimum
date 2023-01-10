@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonClick : Activator
+public class DoubleButtonClick : Activator
 {
     public bool IsActive { get; private set; } = false;
-
-
+    public GameObject otherBtn;
 
     private void OnTriggerStay(Collider other)
     {
@@ -16,7 +15,10 @@ public class ButtonClick : Activator
             GetComponent<Animator>().SetBool("isActivated", true);
             IsActive = true;
             GetComponent<AudioSource>().Play();
-            LoveConnections[0].SetTo(true);
+            if (otherBtn.GetComponent<Animator>().GetBool("isActivated"))
+            {
+                LoveConnections[0].SetTo(true);
+            }
         }
     }
 
