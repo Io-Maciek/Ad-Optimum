@@ -1,3 +1,4 @@
+using Assets.Scripts.EasterEggs;
 using Assets.Scripts.Logic.GameSaves;
 using System;
 using System.Collections;
@@ -11,8 +12,11 @@ public class PlanszaInfo : MonoBehaviour
     public uint ProgressValue { get; private set; } = 0;
     public List<SavingTrigger> EYE_OF_THE_TRIGGER; 
 
+    public AudioSource KontrolerAudio { get; private set; }
+
     void Start()
     {
+        KontrolerAudio = GetComponent<AudioSource>();
         SavingTrigger last_seen;
         try
         {
@@ -27,7 +31,7 @@ public class PlanszaInfo : MonoBehaviour
         }
         catch (NullReferenceException)
         {
-            ApplicationModelInfo.GameSave = new GameSave() { id = 999, ProgressValue = 0, SayMyName = "save_debug.io" };
+            ApplicationModelInfo.GameSave = new GameSave() { id = 999, ProgressValue = 0, SayMyName = "save_debug.io", SecretNumber = new bool[Sekrety.ILOSC_SEKRETOW] };
             if (ApplicationModelInfo.GameSave.ProgressValue == 0)
             {
                 last_seen = null;
@@ -38,18 +42,25 @@ public class PlanszaInfo : MonoBehaviour
             }
         }
 
-        if (last_seen == null)
+        ApplicationModelInfo.GameSave.SceneID = (uint)SceneManager.GetActiveScene().buildIndex;
+        ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
+        if (last_seen != null)
         {
-            ApplicationModelInfo.GameSave.SceneID = (uint)SceneManager.GetActiveScene().buildIndex;
-            ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
-        }
-        else
-        {
-            ApplicationModelInfo.GameSave.SceneID = (uint)SceneManager.GetActiveScene().buildIndex;
-            ProgressValue = ApplicationModelInfo.GameSave.ProgressValue;
             GameObject.Find("Player").transform.position = last_seen.tp_home;
         }
         ApplicationModelInfo.GameSave.Save();
+
+        Sekret[] secrets = FindObjectsOfType<Sekret>();
+        foreach (Sekret secret in secrets)
+        {
+            var wyczytano = ApplicationModelInfo.GameSave.SecretNumber[secret.sekret_id];
+            if (wyczytano)
+            {
+                secret.seen = wyczytano;
+                secret.Close();
+            }
+
+        }
     }
 
     void Update()
@@ -68,7 +79,16 @@ public class PlanszaInfo : MonoBehaviour
         }
         else
         {
-            //Debug.Log($"Progress not updated");
+            ApplicationModelInfo.GameSave.Save();
+            Debug.Log($"Progress just saved");
         }
     }
+
+
+    public void ChangeAudio(AudioClip newAudio)
+    {
+        KontrolerAudio.clip = newAudio;
+        KontrolerAudio.Play();
+    }
+
 }

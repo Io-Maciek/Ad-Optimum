@@ -6,7 +6,7 @@
     <name>breaking_the_ice.sesx</name>
     <tracks>
       <audioTrack automationLaneOpenState="false" id="10001" index="1" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="22000000,00">
+        <trackParameters trackHeight="103" trackHue="22000000000000,00">
           <name>kalimba melody</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -230,7 +230,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10002" index="2" select="true" visible="true">
-        <trackParameters trackHeight="103" trackHue="33000000,00">
+        <trackParameters trackHeight="103" trackHue="33000000000000,00">
           <name>kalimba chords</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -580,7 +580,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10003" index="3" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="176000000,00">
+        <trackParameters trackHeight="103" trackHue="176000000000000,00">
           <name>Dzwoneczki1</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -760,7 +760,7 @@
             <component id="sendPan" powered="true"/>
           </sendSlot>
         </sendList>
-        <audioClip clipAutoCrossfade="true" crossFadeHeadClipID="-1" crossFadeTailClipID="-1" endPoint="309022" fileID="4" hue="-1" id="0" lockedInTime="false" looped="false" name="Track 4_014" offline="false" select="false" sourceInPoint="0" sourceOutPoint="309022" startPoint="0" zOrder="295">
+        <audioClip clipAutoCrossfade="true" crossFadeHeadClipID="-1" crossFadeTailClipID="-1" endPoint="309022" fileID="3" hue="-1" id="0" lockedInTime="false" looped="false" name="Track 4_014" offline="false" select="false" sourceInPoint="0" sourceOutPoint="309022" startPoint="0" zOrder="297">
           <component componentID="Audition.Fader" id="clipGain" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
@@ -781,7 +781,7 @@
             <channel index="1" sourceIndex="1"/>
           </channelMap>
         </audioClip>
-        <audioClip clipAutoCrossfade="true" crossFadeHeadClipID="-1" crossFadeTailClipID="-1" endPoint="618043" fileID="3" hue="-1" id="1" lockedInTime="false" looped="false" name="Track 4_014" offline="false" select="false" sourceInPoint="0" sourceOutPoint="309021" startPoint="309022" zOrder="296">
+        <audioClip clipAutoCrossfade="true" crossFadeHeadClipID="-1" crossFadeTailClipID="-1" endPoint="618043" fileID="4" hue="-1" id="1" lockedInTime="false" looped="false" name="Track 4_014" offline="false" select="false" sourceInPoint="0" sourceOutPoint="309021" startPoint="309022" zOrder="296">
           <component componentID="Audition.Fader" id="clipGain" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
@@ -804,7 +804,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10004" index="4" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="176000000,00">
+        <trackParameters trackHeight="103" trackHue="176000000000000,00">
           <name>Dzwoneczki2</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -986,7 +986,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10005" index="5" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="-100000000,00">
+        <trackParameters trackHeight="103" trackHue="-100000000000000,00">
           <name>Melodyka BASS</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1189,7 +1189,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10006" index="6" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="-100000000,00">
+        <trackParameters trackHeight="103" trackHue="-100000000000000,00">
           <name>Track 6</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1371,7 +1371,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10007" index="7" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="-1,00">
+        <trackParameters trackHeight="103" trackHue="-1000000,00">
           <name>Track 1</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1553,7 +1553,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10008" index="8" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="-1,00">
+        <trackParameters trackHeight="103" trackHue="-1000000,00">
           <name>Track 2</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1735,7 +1735,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10009" index="9" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="-1,00">
+        <trackParameters trackHeight="103" trackHue="-1000000,00">
           <name>Track 3</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1917,7 +1917,7 @@
         </sendList>
       </audioTrack>
       <masterTrack automationLaneOpenState="false" id="10000" index="10" select="false" visible="true">
-        <trackParameters trackHeight="103" trackHue="-100000000,00">
+        <trackParameters trackHeight="103" trackHue="-100000000000000,00">
           <name>Master</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="true">
@@ -1985,8 +1985,8 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
       </masterTrack>
     </tracks>
-    <sessionState ctiPosition="424105" smpteStart="0">
-      <selectionState selectionDuration="0" selectionStart="424105"/>
+    <sessionState ctiPosition="0" smpteStart="0">
+      <selectionState selectionDuration="0" selectionStart="0"/>
       <viewState horizontalViewDuration="1710347" horizontalViewStart="0" trackControlsWidth="224" verticalScrollOffset="0"/>
       <timeFormatState beatsPerBar="4" beatsPerMinute="137" customFrameRate="12" linkToDefaultTimeSettings="false" noteLength="4" subdivisions="16" timeCodeDropFrame="false" timeCodeFrameRate="30" timeCodeNTSC="false" timeFormat="timeFormatBarsAndBeats"/>
       <mixingOptionState defaultPanModeLogarithmic="false" panPower="-3"/>
@@ -2003,10 +2003,10 @@
             xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/">
          <xmp:CreatorTool>Adobe Audition CC (Windows)</xmp:CreatorTool>
          <xmp:CreateDate>2022-12-28T16:54:56+01:00</xmp:CreateDate>
-         <xmp:MetadataDate>2022-12-30T13:18:36+01:00</xmp:MetadataDate>
-         <xmp:ModifyDate>2022-12-30T13:18:36+01:00</xmp:ModifyDate>
-         <xmpMM:InstanceID>xmp.iid:11ac928b-1823-cd4b-9702-b65c76e5eae7</xmpMM:InstanceID>
-         <xmpMM:DocumentID>xmp.did:3475c2d0-ab0a-da43-9fd6-f7a84c1932d2</xmpMM:DocumentID>
+         <xmp:MetadataDate>2023-01-10T17:19:44+01:00</xmp:MetadataDate>
+         <xmp:ModifyDate>2023-01-10T17:19:44+01:00</xmp:ModifyDate>
+         <xmpMM:InstanceID>xmp.iid:ed207771-bd79-634e-98ca-c495bda4f0c5</xmpMM:InstanceID>
+         <xmpMM:DocumentID>xmp.did:83d61449-c809-6e4a-8426-5c732af813a9</xmpMM:DocumentID>
          <xmpMM:OriginalDocumentID>xmp.did:944a5e09-2ab2-634c-8a60-ceff056587b9</xmpMM:OriginalDocumentID>
          <xmpMM:History>
             <rdf:Seq>
@@ -2780,11 +2780,123 @@
                   <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/</stEvt:changed>
                </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:c2178270-c483-294d-b66e-92df8595890a</stEvt:instanceID>
+                  <stEvt:when>2023-01-08T21:54:01+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:407ae8a8-0f6a-284d-ac29-1e5160c635b1</stEvt:instanceID>
+                  <stEvt:when>2023-01-08T21:54:01+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:58ca2630-99c6-b445-a538-5ad5ba4b8886</stEvt:instanceID>
+                  <stEvt:when>2023-01-08T21:54:51+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:0fd43aea-01d0-614b-b8cb-9617d8746ad2</stEvt:instanceID>
+                  <stEvt:when>2023-01-08T21:54:51+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:a5cc262a-466f-074f-892e-0b93791437e3</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T18:56:11+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:109e941e-62dc-e445-bfb1-c9aeca088260</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T18:56:11+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:fa001c53-ba4a-244f-bf83-b789f58fcdf9</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T19:07:38+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:fb699f8b-0ec0-d943-9994-e400f81312d9</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T19:07:38+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:83f2fd52-10cb-994b-a5ad-40f4b2c67071</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T19:07:39+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:8c9a8e6a-c4d2-2e47-bfe1-7c334e7e7dde</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T19:07:39+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:6f9d592e-deb4-8b4b-ac76-4f447fcb8ec7</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T19:07:40+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:feba809f-d93d-904d-8930-e777c0f5e9f4</stEvt:instanceID>
+                  <stEvt:when>2023-01-09T19:07:40+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:a562750e-781d-3a46-aae3-b3ec93a99880</stEvt:instanceID>
+                  <stEvt:when>2023-01-10T17:15:59+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:83d61449-c809-6e4a-8426-5c732af813a9</stEvt:instanceID>
+                  <stEvt:when>2023-01-10T17:15:59+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:9c609f93-98d1-ff46-81a5-b967ecdd25ee</stEvt:instanceID>
+                  <stEvt:when>2023-01-10T17:19:44+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:ed207771-bd79-634e-98ca-c495bda4f0c5</stEvt:instanceID>
+                  <stEvt:when>2023-01-10T17:19:44+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
             </rdf:Seq>
          </xmpMM:History>
          <xmpMM:DerivedFrom rdf:parseType="Resource">
-            <stRef:instanceID>xmp.iid:4e8ed09a-ce26-a44c-b5f1-2a5295a8ed4f</stRef:instanceID>
-            <stRef:documentID>xmp.did:0a1ce81b-35a7-c541-8ad3-548e688dd4aa</stRef:documentID>
+            <stRef:instanceID>xmp.iid:a562750e-781d-3a46-aae3-b3ec93a99880</stRef:instanceID>
+            <stRef:documentID>xmp.did:109e941e-62dc-e445-bfb1-c9aeca088260</stRef:documentID>
             <stRef:originalDocumentID>xmp.did:944a5e09-2ab2-634c-8a60-ceff056587b9</stRef:originalDocumentID>
          </xmpMM:DerivedFrom>
          <dc:format>application/xml</dc:format>
@@ -2835,7 +2947,7 @@
     <clipGroups/>
     <metronome enabled="true" pattern="downBeat subdivision subdivision subdivision " soundSet="sticks">
       <metronomeTrack automationLaneOpenState="false" id="40000" index="0" select="false" visible="true">
-        <trackParameters trackHeight="68" trackHue="-100000000,00">
+        <trackParameters trackHeight="68" trackHue="-100000000000000,00">
           <name>Metronome</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="mono" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="true">
@@ -3023,8 +3135,8 @@
     <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\Merged Files\Track 1_001_merged.wav" id="0" mediaHandler="AmioWav" relativePath="Merged Files/Track 1_001_merged.wav"/>
     <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\kalimba_test_Recorded\Track 2_001.wav" id="1" mediaHandler="AmioWav" relativePath="kalimba_test_Recorded/Track 2_001.wav"/>
     <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\kalimba_test_Recorded\Track 2_002.wav" id="2" mediaHandler="AmioWav" relativePath="kalimba_test_Recorded/Track 2_002.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\Merged Files\Track 4_014_merged_3.wav" id="3" mediaHandler="AmioWav" relativePath="Merged Files/Track 4_014_merged_3.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\Merged Files\Track 4_014_merged_2.wav" id="4" mediaHandler="AmioWav" relativePath="Merged Files/Track 4_014_merged_2.wav"/>
+    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\Merged Files\Track 4_014_merged_2.wav" id="3" mediaHandler="AmioWav" relativePath="Merged Files/Track 4_014_merged_2.wav"/>
+    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\Merged Files\Track 4_014_merged_3.wav" id="4" mediaHandler="AmioWav" relativePath="Merged Files/Track 4_014_merged_3.wav"/>
     <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\breaking_the_ice\Merged Files\Track 5_006_merged.wav" id="5" mediaHandler="AmioWav" relativePath="Merged Files/Track 5_006_merged.wav"/>
   </files>
 

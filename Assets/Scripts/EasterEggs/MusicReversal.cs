@@ -1,17 +1,29 @@
+using Assets.Scripts.EasterEggs;
+using Assets.Scripts.Logic.GameSaves;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MusicReversal : MonoBehaviour
+public class MusicReversal : Sekret
 {
     float prev;
     float vol;
 
-    bool wasSeen = false;
+    public override void Close()
+    {
+        GetComponent<Collider>().isTrigger = false;
+        GetComponent<BoxCollider>().size = Vector3.one * 2;
+    }
+
+    public override void Open()
+    {
+        throw new System.NotImplementedException();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!wasSeen && other.tag == "Player")
+        if(!seen && other.tag == "Player")
         {
             Controller c = other.GetComponent<Controller>();
             prev = c.MainMusicSource.pitch;
@@ -25,14 +37,14 @@ public class MusicReversal : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!wasSeen && other.tag == "Player")
+        if (!seen && other.tag == "Player")
         {
             Controller c = other.GetComponent<Controller>();
             c.MainMusicSource.pitch = prev;
             c.MainMusicSource.volume = vol;
-            GetComponent<Collider>().isTrigger = false;
-            GetComponent<BoxCollider>().size = Vector3.one * 2;
-            wasSeen = true;
+            Close();      
+            seen = true;
+            ApplicationModelInfo.GameSave.AddSecret(sekret_id);
         }
     }
 }
