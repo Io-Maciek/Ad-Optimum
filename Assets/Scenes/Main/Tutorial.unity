@@ -53354,6 +53354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd6555f442ea554bac71ad3e62cf3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sekret_id: 0
 --- !u!1001 &1308280401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71789,6 +71790,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2226056642573196023, guid: 4b042220560424d4ea36ce9a08aea572, type: 3}
+      propertyPath: MaxDistance
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226056642573196023, guid: 4b042220560424d4ea36ce9a08aea572, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226056642573196023, guid: 4b042220560424d4ea36ce9a08aea572, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3505556328938759607, guid: 4b042220560424d4ea36ce9a08aea572, type: 3}
       propertyPath: m_RootOrder
       value: 1
