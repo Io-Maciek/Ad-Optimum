@@ -31,7 +31,7 @@ public class PlanszaInfo : MonoBehaviour
         }
         catch (NullReferenceException)
         {
-            ApplicationModelInfo.GameSave = new GameSave() { id = 999, ProgressValue = 0, SayMyName = "save_debug.io", SecretNumber = new bool[Sekrety.ILOSC_SEKRETOW] };
+            ApplicationModelInfo.GameSave = new GameSave() { id = 999, ProgressValue = 0, SayMyName = "save_debug.io", SecretNumber = new bool[Sekret.ILOSC_SEKRETOW] };
             if (ApplicationModelInfo.GameSave.ProgressValue == 0)
             {
                 last_seen = null;
@@ -83,6 +83,7 @@ public class PlanszaInfo : MonoBehaviour
             Debug.Log($"Progress just saved");
         }
     }
+
 
 
     public void ChangeAudio(AudioClip newAudio)

@@ -31,7 +31,7 @@ public class GameSave
 
     public static GameSave NowaGra(int slot_id)
     {
-       return new GameSave() { id = slot_id, SayMyName = $"save{slot_id}.io", SceneID = 1, ProgressValue = 0, SecretNumber = new bool[Sekrety.ILOSC_SEKRETOW] };
+       return new GameSave() { id = slot_id, SayMyName = $"save{slot_id}.io", SceneID = 1, ProgressValue = 0, SecretNumber = new bool[Sekret.ILOSC_SEKRETOW] };
     }
 
     public void AddSecret(int sekret_Id) => SecretNumber[sekret_Id] = true;
