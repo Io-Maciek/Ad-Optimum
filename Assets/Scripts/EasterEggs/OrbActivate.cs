@@ -12,12 +12,14 @@ public class OrbActivate : Interactable
     Light oswietlenie;
     Material material;
     Animator animator;
+    ParticleSystem pS;
     public override void Awake()
     {
         base.Awake();
         oswietlenie = GetComponentInChildren<Light>();
         material = transform.Find("OrbColor").GetComponent<Renderer>().material;
         animator = GetComponent<Animator>();
+        pS = GetComponentInChildren<ParticleSystem>();
     }
     public override Result<object, string> Action(params object[] args)
     {
@@ -27,9 +29,9 @@ public class OrbActivate : Interactable
             wasEnabled = true;
             ParentSekret.Activate();
 
-            
 
 
+            pS.Play();
             animator.SetBool("set", true);
 
             return Result<object, string>.Ok(wasEnabled.ToString());
