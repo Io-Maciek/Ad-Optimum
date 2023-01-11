@@ -10,6 +10,11 @@ public class MusicReversal : Sekret
     float prev;
     float vol;
 
+    public override void Activate()
+    {
+        ApplicationModelInfo.GameSave.AddSecret(sekret_id);
+    }
+
     public override void Close()
     {
         GetComponent<Collider>().isTrigger = false;
@@ -44,7 +49,6 @@ public class MusicReversal : Sekret
             c.MainMusicSource.volume = vol;
             Close();      
             seen = true;
-            ApplicationModelInfo.GameSave.AddSecret(sekret_id);
         }
     }
 }

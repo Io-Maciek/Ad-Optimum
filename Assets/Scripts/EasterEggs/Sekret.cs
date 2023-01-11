@@ -18,5 +18,6 @@ namespace Assets.Scripts.EasterEggs
 
         public abstract void Open();
         public abstract void Close();
+        public abstract void Activate();
     }
 }
