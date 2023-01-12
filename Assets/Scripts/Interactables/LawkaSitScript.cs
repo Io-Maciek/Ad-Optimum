@@ -33,6 +33,7 @@ public class LawkaSitScript : Interactable
         playerObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         playerObject.GetComponent<Rigidbody>().detectCollisions = false;
         playerObject.GetComponent<Rigidbody>().useGravity = false;
+        //playerObject.transform.localRotation = Quaternion.Euler(0, 1, 0);
 
         yield return _c.StartCoroutine("OpenEye", 1.0f);
     }
