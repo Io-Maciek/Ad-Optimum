@@ -14329,6 +14329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone2
       objectReference: {fileID: 0}
+    - target: {fileID: 4674657585569694366, guid: 79545157ec163ca42a69410e962f7c1b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79545157ec163ca42a69410e962f7c1b, type: 3}
 --- !u!4 &393977639 stripped
@@ -51410,8 +51414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7689451cecf5942b1e82bc06436606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howFar: 2
-  howDown: 1
+  howFar: 2.26
+  howDown: 0.2
   useScale: 0.8
 --- !u!4 &1256913176 stripped
 Transform:
@@ -64111,7 +64115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4838866880481952, guid: 13f1670c2e187874784d0f667f9057f5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.40505555
       objectReference: {fileID: 0}
     - target: {fileID: 4838866880481952, guid: 13f1670c2e187874784d0f667f9057f5, type: 3}
       propertyPath: m_LocalScale.y
@@ -64131,7 +64135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4838866880481952, guid: 13f1670c2e187874784d0f667f9057f5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.688
+      value: 0.5996
       objectReference: {fileID: 0}
     - target: {fileID: 4838866880481952, guid: 13f1670c2e187874784d0f667f9057f5, type: 3}
       propertyPath: m_LocalRotation.w

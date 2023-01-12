@@ -8,7 +8,7 @@ public class LawkaSitScript : Interactable
 
     bool isBeinSittinOn = false;
 
-
+    Vector3 save_pos;
     public override Result<object, string> Action(params object[] args)
     {
         if (playerObject == null)
@@ -27,10 +27,9 @@ public class LawkaSitScript : Interactable
         _c.interaction.enabled = false;
         yield return _c.StartCoroutine("CloseEye", 1.0f);
 
-        playerObject.transform.rotation = transform.rotation;
         isBeinSittinOn = true;
-        playerObject.transform.parent = transform;
-        playerObject.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+        save_pos = playerObject.transform.position;
+        playerObject.transform.position = transform.position + Vector3.up * 0.5f;
         playerObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         playerObject.GetComponent<Rigidbody>().detectCollisions = false;
         playerObject.GetComponent<Rigidbody>().useGravity = false;
@@ -48,8 +47,8 @@ public class LawkaSitScript : Interactable
 
         playerObject.GetComponent<Rigidbody>().detectCollisions = true;
         playerObject.GetComponent<Rigidbody>().useGravity = true;
-        playerObject.transform.localPosition = transform.forward * 2 + Vector3.up;
-        playerObject.transform.parent = null;
+        playerObject.transform.position = save_pos;
+        //playerObject.transform.parent = null;
 
 
 
