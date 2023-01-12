@@ -44,7 +44,7 @@ public class OrbActivate : Interactable
 
     float t = 0.0f;
 
-    void Update()
+    void FixedUpdate()
     {
         if (wasEnabled && t<1)
         {

@@ -12,10 +12,10 @@ namespace Assets.Scripts.Logic.GameSaves
     {
         private void Start()
         {
-/*            GameSave g = new GameSave() { id = 9, ProgressValue = 99, SayMyName = "Filename123", SceneName = "Scenatestowa1" };
-            StreamWriter sw = new StreamWriter(Path.Combine(_GAME, "save2.io"));
-            IoDeSer.IoFile.WriteToFile(g, sw);
-            sw.Close();*/
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            Time.timeScale = 1.0f;
+
 
             // TODO real main menu with save files
             var io = new IoGameSerialier();

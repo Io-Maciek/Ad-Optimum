@@ -326,7 +326,7 @@ MonoBehaviour:
   slopeLimit: 45
   normalSpeed: 7
   runAddition: 3.5
-  jumpHeight: 3.5
+  jumpHeight: 4.5
   crouchSpeed: 3.5
   colliderSizeOnCrouch: 1.5
 --- !u!114 &1407282661422306056
@@ -355,3 +355,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacf97eb2efa50744b867fac69410ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eye_prefab: {fileID: 4865805743423388227, guid: e8bfe0976cc77c5459b4d4c008796f03, type: 3}
