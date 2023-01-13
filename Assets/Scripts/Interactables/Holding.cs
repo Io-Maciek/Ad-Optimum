@@ -16,10 +16,7 @@ public class Holding : Interactable
 
     Vector3 defScale;
 
-    private void Start()
-    {
-        defScale = transform.localScale;
-    }
+   
 
     public override Result<object, string> Action(params object[] args)
     {
