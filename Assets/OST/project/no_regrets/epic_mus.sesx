@@ -6,7 +6,7 @@
     <name>epic_mus.sesx</name>
     <tracks>
       <audioTrack automationLaneOpenState="false" id="10019" index="1" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000,00">
           <name>Trikitiki</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -398,7 +398,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10003" index="2" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="5500000000,00">
+        <trackParameters trackHeight="94" trackHue="550000000000,00">
           <name>Melodia</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -727,7 +727,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10004" index="3" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="5500000000,00">
+        <trackParameters trackHeight="94" trackHue="550000000000,00">
           <name>Akordy</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1812,7 +1812,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10005" index="4" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="1100000000,00">
+        <trackParameters trackHeight="94" trackHue="110000000000,00">
           <name>Chór 1</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -1920,7 +1920,7 @@
               <parameter index="8" name="Early Reflections Delay" parameterValue="0.5"/>
               <parameter index="9" name="Dry Output Level" parameterValue="0.6"/>
               <parameter index="10" name="Wet Output Level" parameterValue="0.4"/>
-              <parameter index="11" name="Is Processing" parameterValue="0.7537689"/>
+              <parameter index="11" name="Is Processing" parameterValue="0.2512563"/>
               <parameter index="12" name="Number of Channels" parameterValue="0.0625"/>
             </component>
           </slot>
@@ -2807,7 +2807,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10006" index="5" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="1100000000,00">
+        <trackParameters trackHeight="94" trackHue="110000000000,00">
           <name>Chór 2</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -2915,7 +2915,7 @@
               <parameter index="8" name="Early Reflections Delay" parameterValue="0.5"/>
               <parameter index="9" name="Dry Output Level" parameterValue="0.6"/>
               <parameter index="10" name="Wet Output Level" parameterValue="0.4"/>
-              <parameter index="11" name="Is Processing" parameterValue="0.7537689"/>
+              <parameter index="11" name="Is Processing" parameterValue="0.2512563"/>
               <parameter index="12" name="Number of Channels" parameterValue="0.0625"/>
             </component>
           </slot>
@@ -3604,7 +3604,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10002" index="6" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="1100000000,00">
+        <trackParameters trackHeight="94" trackHue="110000000000,00">
           <name>Chór Bass</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -3712,7 +3712,7 @@
               <parameter index="8" name="Early Reflections Delay" parameterValue="0.5"/>
               <parameter index="9" name="Dry Output Level" parameterValue="0.6"/>
               <parameter index="10" name="Wet Output Level" parameterValue="0.4"/>
-              <parameter index="11" name="Is Processing" parameterValue="0.7537689"/>
+              <parameter index="11" name="Is Processing" parameterValue="0.2512563"/>
               <parameter index="12" name="Number of Channels" parameterValue="0.0625"/>
             </component>
           </slot>
@@ -4359,7 +4359,7 @@
         </audioClip>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10001" index="7" select="true" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000000000,00">
           <name>Track 1</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -4424,20 +4424,6 @@
             <parameter index="44" name="LowGraphRange" parameterValue="1"/>
           </component>
         </trackAudioParameters>
-        <effectsRack preFader="true">
-          <component id="rackMix" powered="false">
-            <parameter index="0" parameterValue="1"/>
-            <parameter index="1" parameterValue="0"/>
-          </component>
-          <component id="rackInput" powered="true">
-            <parameter index="0" parameterValue="1"/>
-            <parameter index="1" parameterValue="0"/>
-          </component>
-          <component id="rackOutput" powered="true">
-            <parameter index="0" parameterValue="1"/>
-            <parameter index="1" parameterValue="0"/>
-          </component>
-        </effectsRack>
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
@@ -4555,7 +4541,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10007" index="8" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-1000000000000,00">
+        <trackParameters trackHeight="94" trackHue="-100000000000000,00">
           <name>Track 7</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -4663,7 +4649,7 @@
               <parameter index="8" name="Early Reflections Delay" parameterValue="0.5"/>
               <parameter index="9" name="Dry Output Level" parameterValue="0.6"/>
               <parameter index="10" name="Wet Output Level" parameterValue="0.4"/>
-              <parameter index="11" name="Is Processing" parameterValue="0.7537689"/>
+              <parameter index="11" name="Is Processing" parameterValue="0.2512563"/>
               <parameter index="12" name="Number of Channels" parameterValue="0.0625"/>
             </component>
           </slot>
@@ -4785,7 +4771,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10014" index="9" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000,00">
           <name>Track 2</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -4893,7 +4879,7 @@
               <parameter index="8" name="Early Reflections Delay" parameterValue="0.5"/>
               <parameter index="9" name="Dry Output Level" parameterValue="0.6"/>
               <parameter index="10" name="Wet Output Level" parameterValue="0.4"/>
-              <parameter index="11" name="Is Processing" parameterValue="0.7537689"/>
+              <parameter index="11" name="Is Processing" parameterValue="0.2512563"/>
               <parameter index="12" name="Number of Channels" parameterValue="0.0625"/>
             </component>
           </slot>
@@ -5015,7 +5001,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10015" index="10" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000,00">
           <name>Track 3</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -5197,7 +5183,7 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10016" index="11" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000,00">
           <name>Track 4</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
@@ -5379,7 +5365,7 @@
         </sendList>
       </audioTrack>
       <masterTrack automationLaneOpenState="false" id="10000" index="12" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000000000,00">
           <name>Master</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="true">
@@ -5449,7 +5435,7 @@
     </tracks>
     <sessionState ctiPosition="9328" smpteStart="0">
       <selectionState selectionDuration="0" selectionStart="9328"/>
-      <viewState horizontalViewDuration="3668872" horizontalViewStart="548" trackControlsWidth="224" verticalScrollOffset="-1"/>
+      <viewState horizontalViewDuration="3668872" horizontalViewStart="875029" trackControlsWidth="224" verticalScrollOffset="-1"/>
       <timeFormatState beatsPerBar="4" beatsPerMinute="80" customFrameRate="12" linkToDefaultTimeSettings="false" noteLength="4" subdivisions="16" timeCodeDropFrame="false" timeCodeFrameRate="30" timeCodeNTSC="false" timeFormat="timeFormatBarsAndBeats"/>
       <mixingOptionState defaultPanModeLogarithmic="false" panPower="-3"/>
     </sessionState>
@@ -5466,10 +5452,10 @@
             xmlns:riffinfo="http://ns.adobe.com/riff/info/">
          <xmp:CreatorTool>Adobe Audition CC (Windows)</xmp:CreatorTool>
          <xmp:CreateDate>2023-01-10T10:26:34+01:00</xmp:CreateDate>
-         <xmp:MetadataDate>2023-01-12T13:44:55+01:00</xmp:MetadataDate>
-         <xmp:ModifyDate>2023-01-12T13:44:55+01:00</xmp:ModifyDate>
-         <xmpMM:InstanceID>xmp.iid:7917c7e9-8424-a641-a90a-97adcdd127fe</xmpMM:InstanceID>
-         <xmpMM:DocumentID>xmp.did:ff578583-ef0a-204d-a318-57755746f235</xmpMM:DocumentID>
+         <xmp:MetadataDate>2023-01-13T10:32:56+01:00</xmp:MetadataDate>
+         <xmp:ModifyDate>2023-01-13T10:32:38+01:00</xmp:ModifyDate>
+         <xmpMM:InstanceID>xmp.iid:474a76e7-1a67-064d-83f4-7eb8cc0144f5</xmpMM:InstanceID>
+         <xmpMM:DocumentID>xmp.did:394fe3ff-4509-0b43-bb71-b5c63425a793</xmpMM:DocumentID>
          <xmpMM:OriginalDocumentID>xmp.did:61978ce7-7257-a342-a9dd-8e5696101799</xmpMM:OriginalDocumentID>
          <xmpMM:History>
             <rdf:Seq>
@@ -8245,11 +8231,39 @@
                   <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/</stEvt:changed>
                </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:22de479c-07ad-854f-9176-e406f0ed8447</stEvt:instanceID>
+                  <stEvt:when>2023-01-13T10:32:38+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:394fe3ff-4509-0b43-bb71-b5c63425a793</stEvt:instanceID>
+                  <stEvt:when>2023-01-13T10:32:38+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:e2fa9c9d-7167-4d47-b74b-31f17aa2f914</stEvt:instanceID>
+                  <stEvt:when>2023-01-13T10:32:56+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:474a76e7-1a67-064d-83f4-7eb8cc0144f5</stEvt:instanceID>
+                  <stEvt:when>2023-01-13T10:32:56+01:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
             </rdf:Seq>
          </xmpMM:History>
          <xmpMM:DerivedFrom rdf:parseType="Resource">
-            <stRef:instanceID>xmp.iid:92ac6870-52d9-8a4f-ba3d-3437d5801afb</stRef:instanceID>
-            <stRef:documentID>xmp.did:a7206710-840b-3d45-94f0-1053adb5eead</stRef:documentID>
+            <stRef:instanceID>xmp.iid:22de479c-07ad-854f-9176-e406f0ed8447</stRef:instanceID>
+            <stRef:documentID>xmp.did:ff578583-ef0a-204d-a318-57755746f235</stRef:documentID>
             <stRef:originalDocumentID>xmp.did:61978ce7-7257-a342-a9dd-8e5696101799</stRef:originalDocumentID>
          </xmpMM:DerivedFrom>
          <dc:format>application/xml</dc:format>
@@ -8311,102 +8325,7 @@
                            
 <?xpacket end="w"?>]]></xmpMetadata>
     <clipGroups>
-      <clipGroup hue="332" id="0">
-        <name>Group 36</name>
-        <item clipID="29" trackID="10005"/>
-        <item clipID="31" trackID="10005"/>
-        <item clipID="30" trackID="10005"/>
-        <item clipID="22" trackID="10006"/>
-        <item clipID="21" trackID="10006"/>
-        <item clipID="23" trackID="10006"/>
-        <item clipID="16" trackID="10002"/>
-        <item clipID="15" trackID="10002"/>
-        <item clipID="17" trackID="10002"/>
-        <item clipID="18" trackID="10002"/>
-        <item clipID="19" trackID="10002"/>
-      </clipGroup>
-      <clipGroup hue="252" id="1">
-        <name>Group 37</name>
-        <item clipID="32" trackID="10005"/>
-        <item clipID="33" trackID="10005"/>
-        <item clipID="34" trackID="10005"/>
-        <item clipID="24" trackID="10006"/>
-        <item clipID="25" trackID="10006"/>
-        <item clipID="26" trackID="10006"/>
-        <item clipID="21" trackID="10002"/>
-        <item clipID="23" trackID="10002"/>
-        <item clipID="20" trackID="10002"/>
-        <item clipID="22" trackID="10002"/>
-        <item clipID="24" trackID="10002"/>
-      </clipGroup>
-      <clipGroup hue="292" id="2">
-        <name>Group 32</name>
-        <item clipID="17" trackID="10005"/>
-        <item clipID="18" trackID="10005"/>
-        <item clipID="16" trackID="10005"/>
-        <item clipID="15" trackID="10005"/>
-      </clipGroup>
-      <clipGroup hue="332" id="3">
-        <name>Group 21</name>
-        <item clipID="4" trackID="10005"/>
-        <item clipID="6" trackID="10005"/>
-        <item clipID="5" trackID="10005"/>
-        <item clipID="0" trackID="10006"/>
-        <item clipID="1" trackID="10006"/>
-        <item clipID="2" trackID="10006"/>
-      </clipGroup>
-      <clipGroup hue="132" id="4">
-        <name>Group 08</name>
-        <item clipID="25" trackID="10004"/>
-        <item clipID="27" trackID="10004"/>
-        <item clipID="28" trackID="10004"/>
-        <item clipID="29" trackID="10004"/>
-        <item clipID="32" trackID="10004"/>
-        <item clipID="30" trackID="10004"/>
-        <item clipID="31" trackID="10004"/>
-        <item clipID="26" trackID="10004"/>
-      </clipGroup>
-      <clipGroup hue="172" id="5">
-        <name>Group 03</name>
-        <item clipID="1" trackID="10004"/>
-        <item clipID="0" trackID="10004"/>
-        <item clipID="2" trackID="10004"/>
-        <item clipID="3" trackID="10004"/>
-        <item clipID="4" trackID="10004"/>
-        <item clipID="5" trackID="10004"/>
-        <item clipID="6" trackID="10004"/>
-        <item clipID="7" trackID="10004"/>
-      </clipGroup>
-      <clipGroup hue="212" id="6">
-        <name>Group 07</name>
-        <item clipID="17" trackID="10004"/>
-        <item clipID="18" trackID="10004"/>
-        <item clipID="20" trackID="10004"/>
-        <item clipID="23" trackID="10004"/>
-        <item clipID="21" trackID="10004"/>
-        <item clipID="24" trackID="10004"/>
-        <item clipID="22" trackID="10004"/>
-        <item clipID="19" trackID="10004"/>
-      </clipGroup>
-      <clipGroup hue="292" id="7">
-        <name>Group 26</name>
-        <item clipID="8" trackID="10004"/>
-        <item clipID="14" trackID="10004"/>
-        <item clipID="15" trackID="10004"/>
-        <item clipID="11" trackID="10004"/>
-        <item clipID="13" trackID="10004"/>
-        <item clipID="10" trackID="10004"/>
-        <item clipID="12" trackID="10004"/>
-        <item clipID="9" trackID="10004"/>
-      </clipGroup>
-      <clipGroup hue="92" id="8">
-        <name>Group 15</name>
-        <item clipID="0" trackID="10005"/>
-        <item clipID="1" trackID="10005"/>
-        <item clipID="2" trackID="10005"/>
-        <item clipID="3" trackID="10005"/>
-      </clipGroup>
-      <clipGroup hue="92" id="9">
+      <clipGroup hue="92" id="0">
         <name>Group 24</name>
         <item clipID="8" trackID="10005"/>
         <item clipID="7" trackID="10005"/>
@@ -8420,10 +8339,105 @@
         <item clipID="1" trackID="10002"/>
         <item clipID="2" trackID="10002"/>
       </clipGroup>
+      <clipGroup hue="92" id="1">
+        <name>Group 15</name>
+        <item clipID="0" trackID="10005"/>
+        <item clipID="1" trackID="10005"/>
+        <item clipID="2" trackID="10005"/>
+        <item clipID="3" trackID="10005"/>
+      </clipGroup>
+      <clipGroup hue="292" id="2">
+        <name>Group 26</name>
+        <item clipID="8" trackID="10004"/>
+        <item clipID="14" trackID="10004"/>
+        <item clipID="15" trackID="10004"/>
+        <item clipID="11" trackID="10004"/>
+        <item clipID="13" trackID="10004"/>
+        <item clipID="10" trackID="10004"/>
+        <item clipID="12" trackID="10004"/>
+        <item clipID="9" trackID="10004"/>
+      </clipGroup>
+      <clipGroup hue="212" id="3">
+        <name>Group 07</name>
+        <item clipID="17" trackID="10004"/>
+        <item clipID="18" trackID="10004"/>
+        <item clipID="20" trackID="10004"/>
+        <item clipID="23" trackID="10004"/>
+        <item clipID="21" trackID="10004"/>
+        <item clipID="24" trackID="10004"/>
+        <item clipID="22" trackID="10004"/>
+        <item clipID="19" trackID="10004"/>
+      </clipGroup>
+      <clipGroup hue="172" id="4">
+        <name>Group 03</name>
+        <item clipID="1" trackID="10004"/>
+        <item clipID="0" trackID="10004"/>
+        <item clipID="2" trackID="10004"/>
+        <item clipID="3" trackID="10004"/>
+        <item clipID="4" trackID="10004"/>
+        <item clipID="5" trackID="10004"/>
+        <item clipID="6" trackID="10004"/>
+        <item clipID="7" trackID="10004"/>
+      </clipGroup>
+      <clipGroup hue="132" id="5">
+        <name>Group 08</name>
+        <item clipID="25" trackID="10004"/>
+        <item clipID="27" trackID="10004"/>
+        <item clipID="28" trackID="10004"/>
+        <item clipID="29" trackID="10004"/>
+        <item clipID="32" trackID="10004"/>
+        <item clipID="30" trackID="10004"/>
+        <item clipID="31" trackID="10004"/>
+        <item clipID="26" trackID="10004"/>
+      </clipGroup>
+      <clipGroup hue="332" id="6">
+        <name>Group 21</name>
+        <item clipID="4" trackID="10005"/>
+        <item clipID="6" trackID="10005"/>
+        <item clipID="5" trackID="10005"/>
+        <item clipID="0" trackID="10006"/>
+        <item clipID="1" trackID="10006"/>
+        <item clipID="2" trackID="10006"/>
+      </clipGroup>
+      <clipGroup hue="292" id="7">
+        <name>Group 32</name>
+        <item clipID="17" trackID="10005"/>
+        <item clipID="18" trackID="10005"/>
+        <item clipID="16" trackID="10005"/>
+        <item clipID="15" trackID="10005"/>
+      </clipGroup>
+      <clipGroup hue="252" id="8">
+        <name>Group 37</name>
+        <item clipID="32" trackID="10005"/>
+        <item clipID="33" trackID="10005"/>
+        <item clipID="34" trackID="10005"/>
+        <item clipID="24" trackID="10006"/>
+        <item clipID="25" trackID="10006"/>
+        <item clipID="26" trackID="10006"/>
+        <item clipID="21" trackID="10002"/>
+        <item clipID="23" trackID="10002"/>
+        <item clipID="20" trackID="10002"/>
+        <item clipID="22" trackID="10002"/>
+        <item clipID="24" trackID="10002"/>
+      </clipGroup>
+      <clipGroup hue="332" id="9">
+        <name>Group 36</name>
+        <item clipID="29" trackID="10005"/>
+        <item clipID="31" trackID="10005"/>
+        <item clipID="30" trackID="10005"/>
+        <item clipID="22" trackID="10006"/>
+        <item clipID="21" trackID="10006"/>
+        <item clipID="23" trackID="10006"/>
+        <item clipID="16" trackID="10002"/>
+        <item clipID="15" trackID="10002"/>
+        <item clipID="17" trackID="10002"/>
+        <item clipID="18" trackID="10002"/>
+        <item clipID="19" trackID="10002"/>
+      </clipGroup>
     </clipGroups>
     <metronome enabled="true" pattern="downBeat subdivision subdivision subdivision " soundSet="sticks">
       <metronomeTrack automationLaneOpenState="false" id="40000" index="0" select="false" visible="true">
-        <trackParameters trackHeight="94" trackHue="-100000000000000,00">
+        <trackParameters trackHeight="94" trackHue="-10000000000000000,00">
           <name>Metronome</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="mono" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="true">
@@ -8608,19 +8622,19 @@
   </session>
 
   <files>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 3_003_merged.wav" id="0" mediaHandler="AmioWav" relativePath="Merged Files/Track 3_003_merged.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 4_008.wav" id="1" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 4_008.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Akordy BON_001_1.wav" id="2" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Akordy BON_001_1.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 6_002_merged.wav" id="3" mediaHandler="AmioWav" relativePath="Merged Files/Track 6_002_merged.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 4_008_merged.wav" id="4" mediaHandler="AmioWav" relativePath="Merged Files/Track 4_008_merged.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 5_005.wav" id="5" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 5_005.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 6_009.wav" id="6" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 6_009.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 7_010.wav" id="7" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 7_010.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 6_009_merged.wav" id="8" mediaHandler="AmioWav" relativePath="Merged Files/Track 6_009_merged.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Melodia_017.wav" id="9" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Melodia_017.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 5_005_merged.wav" id="10" mediaHandler="AmioWav" relativePath="Merged Files/Track 5_005_merged.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Melodia_028.wav" id="11" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Melodia_028.wav"/>
-    <file absolutePath="C:\Programowanie\_1A_UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Melodia_028_merged.wav" id="12" mediaHandler="AmioWav" relativePath="Merged Files/Melodia_028_merged.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 3_003_merged.wav" id="0" mediaHandler="AmioWav" relativePath="Merged Files/Track 3_003_merged.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 4_008.wav" id="1" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 4_008.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Akordy BON_001_1.wav" id="2" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Akordy BON_001_1.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 6_002_merged.wav" id="3" mediaHandler="AmioWav" relativePath="Merged Files/Track 6_002_merged.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 4_008_merged.wav" id="4" mediaHandler="AmioWav" relativePath="Merged Files/Track 4_008_merged.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 5_005.wav" id="5" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 5_005.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 6_009.wav" id="6" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 6_009.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Track 7_010.wav" id="7" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Track 7_010.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 6_009_merged.wav" id="8" mediaHandler="AmioWav" relativePath="Merged Files/Track 6_009_merged.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Melodia_017.wav" id="9" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Melodia_017.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Track 5_005_merged.wav" id="10" mediaHandler="AmioWav" relativePath="Merged Files/Track 5_005_merged.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\epic_mus_Recorded\Melodia_028.wav" id="11" mediaHandler="AmioWav" relativePath="epic_mus_Recorded/Melodia_028.wav"/>
+    <file absolutePath="C:\Programowanie\UNITY\Ad-Optimum\Assets\OST\project\no_regrets\Merged Files\Melodia_028_merged.wav" id="12" mediaHandler="AmioWav" relativePath="Merged Files/Melodia_028_merged.wav"/>
   </files>
 
   <audioDevice inputID="6BC43B62-ED45-40FE-9578-5E7998DAD527" outputID="6929AFC8-C7C6-4A7F-8DAB-9BA883090A12">
