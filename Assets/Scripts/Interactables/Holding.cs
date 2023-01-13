@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Obsolete("Use BetterHolding class")]
 public class Holding : Interactable
 {
     public bool isBeingHold { get; private set; } = false;
@@ -16,7 +18,6 @@ public class Holding : Interactable
 
     Vector3 defScale;
 
-   
 
     public override Result<object, string> Action(params object[] args)
     {
@@ -69,19 +70,4 @@ public class Holding : Interactable
             GetComponent<Rigidbody>().velocity = afterSpeed;// +(afterSpeed2*10);
         }
     }
-
-
-    void FixedUpdate()
-    {
-/*        if (isBeingHold)
-        {
-            Vector3 joeBidenPosition = (playerObject.transform.Find("PlayerCamera").transform.position
-                + playerObject.transform.Find("PlayerCamera").transform.forward * howFar)+Vector3.down*howDown;
-            transform.position = joeBidenPosition;
-            transform.rotation = new Quaternion(0,0,0,0);
-        }*/
-    }
-
-
-
 }

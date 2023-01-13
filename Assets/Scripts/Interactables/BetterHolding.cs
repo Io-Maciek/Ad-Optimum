@@ -5,24 +5,28 @@ using UnityEngine;
 public class BetterHolding : Interactable
 {
     GameObject player;
+    new GameObject camera;
     Controller controller;
+    Rigidbody rb;
 
     bool isGrabbed = false;
     bool keyDown = false;
 
-    [Range(0f, 3.0f)]
+    [Range(0f, 10.0f)]
     public float howFar = 2.25f;
     [Range(-1f, 1f)]
     public float howDown = .2f;
-    [Range(0.0f, 1.0f)]
-    public float useScale = .8f;
+    [Range(-5, 5f)]
+    public float howRight = 2f;
 
-    Vector3 defScale;
+    [Range(0f, 200f)]
+    public float sensitivity = 100f;
 
-    private void Start()
-    {
-        defScale = transform.localScale;
-    }
+    public float MaxDistance = 5f;
+
+    public Vector3 rotation;
+
+
 
     public override Result<object, string> Action(params object[] args)
     {
@@ -30,6 +34,8 @@ public class BetterHolding : Interactable
         {
             player = args[0] as GameObject;
             controller = player.GetComponent<Controller>();
+            camera = player.transform.Find("PlayerCamera").gameObject;
+            rb = GetComponent<Rigidbody>();
         }
 
         return use();
@@ -37,31 +43,34 @@ public class BetterHolding : Interactable
 
     Result<object, string> use()
     {
-        //transform.parent = player.transform;
-
         isGrabbed = true;
         controller.interaction.enabled = false;
+        rb.useGravity = false;
+
+
+        rb.drag = 10;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.transform.parent = camera.transform;
+
+        transform.localEulerAngles = rotation;
+
+        Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(),true);
         keyDown = true;
-        GetComponent<Rigidbody>().useGravity = false;
-        transform.localScale = defScale;
-
-        Vector3 joeBidenPosition = player.transform.Find("PlayerCamera").transform.position;
-        Vector3 covidDistance = player.transform.Find("PlayerCamera").transform.forward * howFar;
-        Vector3 getDown = Vector3.down * howDown;
-        transform.position = joeBidenPosition + covidDistance + getDown;
-        Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(), true);
-
         return Result<object, string>.Ok(null);
     }
 
     void LetGo()
     {
         isGrabbed = false;
+        rb.useGravity = true;
         Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(), false);
         controller.interaction.enabled = true;
-        transform.localScale = defScale * useScale;
-        GetComponent<Rigidbody>().useGravity = true;
-        //transform.parent = null;
+
+        rb.drag = 1;
+        rb.constraints = RigidbodyConstraints.None;
+        transform.parent = null;
+
+
     }
 
 
@@ -69,13 +78,18 @@ public class BetterHolding : Interactable
     {
         if (isGrabbed)
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            Vector3 joeBidenPosition = player.transform.Find("PlayerCamera").transform.position;
-            Vector3 covidDistance = player.transform.Find("PlayerCamera").transform.forward * howFar;
-            Vector3 getDown = Vector3.down * howDown  +   Vector3.right*.5f;
-            transform.position = Vector3.Lerp(transform.position, joeBidenPosition + covidDistance + getDown, Time.deltaTime * 5f);
-
-            //TODO ¿yj transform.LookAt(player.transform);
+            Vector3 tep = camera.transform.position + camera.transform.forward * howFar + Vector3.down * howDown;
+            float dis = Vector3.Distance(transform.position, tep);
+            if (dis > MaxDistance)
+            {
+                transform.position = tep;
+            }
+            else if (dis > 0.1f)
+            {
+                Vector3 move = tep - transform.position;
+                rb.AddForce(move * sensitivity);
+            }
+            //transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, tep2, Time.deltaTime * 2f);
         }
     }
 
@@ -90,8 +104,6 @@ public class BetterHolding : Interactable
 
             if(!keyDown && key > .97)
                 LetGo();
-
-            
         }
     }
 }

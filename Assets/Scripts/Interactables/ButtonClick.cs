@@ -11,7 +11,7 @@ public class ButtonClick : Activator
 
     private void OnTriggerStay(Collider other)
     {
-        if (!IsActive && (other.tag == "Player" || other.GetComponent<Holding>()))
+        if (!IsActive && (other.tag == "Player" || other.GetComponent<BetterHolding>()))
         {
             GetComponent<Animator>().SetBool("isActivated", true);
             IsActive = true;
@@ -22,7 +22,7 @@ public class ButtonClick : Activator
 
     private void OnTriggerExit(Collider other)
     {
-        if (IsActive && (other.tag == "Player" || other.GetComponent<Holding>()))
+        if (IsActive && (other.tag == "Player" || other.GetComponent<BetterHolding>()))
         {
             GetComponent<Animator>().SetBool("isActivated", false);
             IsActive = false;
