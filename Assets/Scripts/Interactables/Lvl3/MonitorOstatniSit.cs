@@ -6,6 +6,8 @@ public class MonitorOstatniSit : Interactable
 {
     GameObject playerObject;
     public Transform sitter;
+
+    public Monitor wyswietlacz;
     public override Result<object, string> Action(params object[] args)
     {
         if (playerObject == null)
@@ -33,6 +35,8 @@ public class MonitorOstatniSit : Interactable
         yield return _c.StartCoroutine("OpenEye", 1.0f);
         _c.interaction.enabled = true;
         enabled = false;
+
+        yield return wyswietlacz.StartCoroutine("Init");
     }
 
 

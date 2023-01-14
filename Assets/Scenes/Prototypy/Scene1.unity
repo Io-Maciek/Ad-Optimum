@@ -1133,7 +1133,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e25f2fc6b013148b8d8a5787930e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ekranDef: {fileID: 9140568725673975463, guid: 05a511e9df523724f8d1d0c99d58cca1, type: 3}
+  StartUpEkran: {fileID: 9140568725673975463, guid: 05a511e9df523724f8d1d0c99d58cca1, type: 3}
+  bootImages:
+  - {fileID: 2800000, guid: bbdd1f10b0124054b97ca09d3aa30a1b, type: 3}
+  - {fileID: 2800000, guid: 4ba04731014ba4e4e92e9d52aa71cd4d, type: 3}
+  - {fileID: 2800000, guid: 87bdf518c8a23f34f8df11136b37d8c8, type: 3}
+  - {fileID: 2800000, guid: 0de74e936fab420489b41252efd803b1, type: 3}
+  - {fileID: 2800000, guid: 58b64488e6bb7e842a9f09da3138375e, type: 3}
+  - {fileID: 2800000, guid: 3c6bf96e13a5daa4ab0f32221f27ab7d, type: 3}
+  - {fileID: 2800000, guid: d08e59fada4e5fd43b4c66c3ab198a55, type: 3}
+  - {fileID: 2800000, guid: bec2f2542e1747240ab48a495c5a156d, type: 3}
+  - {fileID: 2800000, guid: b6a83e01ff491db4b8dcf758529c7858, type: 3}
+  - {fileID: 2800000, guid: 20113c6313069fb44bd13d8a1c01a5cb, type: 3}
+  - {fileID: 2800000, guid: 60b8565355617af4c9b614d2aecb534b, type: 3}
+  - {fileID: 2800000, guid: 87e9478aa62cca848bbb929e7a8faf51, type: 3}
 --- !u!1 &1922993177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sitter: {fileID: 2133597481}
+  wyswietlacz: {fileID: 1831815215}
 --- !u!65 &2043078484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1580,6 +1594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pochodnia
       objectReference: {fileID: 0}
+    - target: {fileID: 2944148932499958793, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2944148932499958795, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1645,6 +1663,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8203809195748524968, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 8203809195748524971, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
       propertyPath: m_RootOrder
       value: 3
