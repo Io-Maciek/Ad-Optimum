@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Obsolete("Use BetterHolding class")]
+/// <summary>
+/// Class previously used for holding an item. Use <see cref="BetterHolding"/> instead for better physics.
+/// </summary>
+[Obsolete("Use \"BetterHolding\" class")]
 public class Holding : Interactable
 {
     public bool isBeingHold { get; private set; } = false;

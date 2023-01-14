@@ -13,7 +13,7 @@ public class OrbActivate : Interactable
     Material material;
     Animator animator;
     ParticleSystem pS;
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         oswietlenie = GetComponentInChildren<Light>();
@@ -34,7 +34,7 @@ public class OrbActivate : Interactable
             pS.Play();
             animator.SetBool("set", true);
 
-            return Result<object, string>.Ok(wasEnabled.ToString());
+            return Result<string>.Ok();
         }
         else
         {

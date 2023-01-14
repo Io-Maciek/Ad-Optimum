@@ -5,11 +5,14 @@ using UnityEngine;
 public class ActivateTest : Activatable
 {
     Vector3 startPos;
+
+
     void Start()
     {
         startPos = transform.position;
     }
-    public override Result<string> SetTo(bool setValue, params object[] args)
+
+    public override Result<object, object> SetTo(bool setValue, params object[] args)
     {
         if (!setValue)
         {
@@ -20,6 +23,6 @@ public class ActivateTest : Activatable
             transform.position += Vector3.up * 5;
         }
 
-        return Result<string>.Ok();
+        return Result<object>.Ok();
     }
 }

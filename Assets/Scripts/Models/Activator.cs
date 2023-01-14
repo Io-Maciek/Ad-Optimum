@@ -17,7 +17,8 @@ namespace Assets.Scripts.Models
         /// List with all dependant <see cref="Activatable"/> objects, that this object <see cref="Activator"/> will process via method
         /// <see cref="Activatable.SetTo(bool, object[])"/>
         /// </value>
-        public List<Activatable> LoveConnections = new List<Activatable>();
+        [SerializeField]
+        public List<Activatable> LoveConnections;
 
         void Awake()
         {

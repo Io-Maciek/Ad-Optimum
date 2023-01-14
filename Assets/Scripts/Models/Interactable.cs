@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public abstract class Interactable : MonoBehaviour
 {
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         if (gameObject.tag != "Interactable")
         {

@@ -10,18 +10,10 @@ using Assets.Scripts.Models;
 public abstract class Activatable : MonoBehaviour
 {
     /// <value>
-    /// Activation status of this game object.
+    /// Check status of this game object.
     /// </value>
-    public bool IsActive { get; private set; }
+    public bool IsActive { get; set; }
 
-    void Awake()
-    {
-        if (gameObject.tag != "Activatable")
-        {
-            Debug.LogWarning($"Object {gameObject} has not set tag 'Activatable'");
-            gameObject.tag = "Activatable";
-        }
-    }
 
 
     /// <summary>
@@ -31,5 +23,5 @@ public abstract class Activatable : MonoBehaviour
     /// <param name="args">List of parameters that can be passed to method for processing.</param>
     /// <returns><see cref="Result{E}.Ok"/> if method executed properly or <see cref="Result{E}.Err(E)"/>
     /// when it encountered any error.</returns>
-    public abstract Result<string> SetTo(bool setValue, params object[] args);
+    public abstract Result<object, object> SetTo(bool setValue, params object[] args);
 }

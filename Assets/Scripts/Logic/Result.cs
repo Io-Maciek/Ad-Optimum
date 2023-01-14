@@ -119,6 +119,14 @@ public class Result<E>
     {
         return _this.GetError();
     }
+
+    public static implicit operator Result<object, E>(Result<E> _this)
+    {
+        if (_this.IsOk)
+            return Result<object, E>.Ok(null);
+        else
+            return Result<object, E>.Err(_this.ErrorItem);
+    }
 }
 
 /// <summary>

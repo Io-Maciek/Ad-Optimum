@@ -1,30 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Class used for holding a physics object.
+/// </summary>
 public class BetterHolding : Interactable
 {
-    GameObject player;
-    new GameObject camera;
-    Controller controller;
-    Rigidbody rb;
+    protected GameObject player;
+    protected new GameObject camera;
+    protected Controller controller;
+    protected Rigidbody rb;
 
-    bool isGrabbed = false;
+    protected bool isGrabbed = false;
     bool keyDown = false;
+
 
     [Range(0f, 10.0f)]
     public float howFar = 2.25f;
     [Range(-1f, 1f)]
     public float howDown = .2f;
-    [Range(-5, 5f)]
-    public float howRight = 2f;
+    [Range(-2f, 2f)]
+    public float howRight = 0.0f;
 
-    [Range(0f, 200f)]
+    [Tooltip("Smothly drags object to the player. Take in consideration the mass of an object!")]
+
     public float sensitivity = 100f;
 
+    [Tooltip("Teleports object to player after this distance. Take in consideration the size of an object!")]
     public float MaxDistance = 5f;
 
-    public Vector3 rotation;
+
+    [Space]
+    [Tooltip("Enables \"Special Rotation\"")]
+    public bool overrideRotation = false;
+    [Tooltip("Forces object to rotate differently that it was picked up. Only if \"Override Rotation\" is on")]
+    public Vector3 specialRotation = Vector3.zero;
+    public bool _debug = false;
 
 
 
@@ -52,7 +66,8 @@ public class BetterHolding : Interactable
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.transform.parent = camera.transform;
 
-        transform.localEulerAngles = rotation;
+        if(overrideRotation)
+            transform.localEulerAngles = specialRotation;
 
         Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(),true);
         keyDown = true;
@@ -69,16 +84,14 @@ public class BetterHolding : Interactable
         rb.drag = 1;
         rb.constraints = RigidbodyConstraints.None;
         transform.parent = null;
-
-
     }
 
 
-    private void Update()
+    protected virtual void Update()
     {
         if (isGrabbed)
         {
-            Vector3 tep = camera.transform.position + camera.transform.forward * howFar + Vector3.down * howDown;
+            Vector3 tep = camera.transform.position + camera.transform.forward  * howFar + Vector3.down * howDown + camera.transform.right* howRight;
             float dis = Vector3.Distance(transform.position, tep);
             if (dis > MaxDistance)
             {
@@ -89,11 +102,14 @@ public class BetterHolding : Interactable
                 Vector3 move = tep - transform.position;
                 rb.AddForce(move * sensitivity);
             }
+
+            if (_debug && overrideRotation)
+                transform.localEulerAngles = specialRotation;
             //transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, tep2, Time.deltaTime * 2f);
         }
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (isGrabbed)
         {
