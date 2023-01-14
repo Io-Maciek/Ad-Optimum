@@ -13,6 +13,9 @@ public class Monitor : MonoBehaviour
     public GameObject LoginEkran;
     public List<Texture2D> bootImages;
 
+    public GameObject sekretEndScreen;
+    public List<Texture2D> secretBootImages;
+
     void Awake()
     {
         middle = transform.Find("main");
@@ -65,7 +68,29 @@ public class Monitor : MonoBehaviour
 
     public void EndSecret()
     {
-
+        Destroy(ekranMiddle);
+        StartCoroutine("_init");
     }
 
+    IEnumerator _init()
+    {
+        yield return new WaitForSeconds(2.5f);
+        ekranMiddle = Instantiate(sekretEndScreen, middle);
+
+        foreach (var img in secretBootImages.GetRange(0,16))
+        {
+            yield return new WaitForSeconds(Random.Range(0.75f, 1.5f));
+            ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", img);
+        }
+
+        yield return new WaitForSeconds(.25f);
+
+        foreach (var img in secretBootImages.GetRange(16, 6))
+        {
+            yield return new WaitForSeconds(Random.Range(0.75f, 1.5f));
+            ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", img);
+        }
+
+        // TODO dokonczenie zakonczenia
+    }
 }

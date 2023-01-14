@@ -1149,6 +1149,30 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 60b8565355617af4c9b614d2aecb534b, type: 3}
   - {fileID: 2800000, guid: 87e9478aa62cca848bbb929e7a8faf51, type: 3}
   - {fileID: 2800000, guid: 7ad8172610878624da34d8a3108332b3, type: 3}
+  sekretEndScreen: {fileID: 9140568725673975463, guid: 05a81f49f008a1c4fa03a52bd906c575, type: 3}
+  secretBootImages:
+  - {fileID: 2800000, guid: a8f3998e4104d81448b5da92f4ff1cf7, type: 3}
+  - {fileID: 2800000, guid: 15df21cfaa7eb1244ad5b19afc193aa4, type: 3}
+  - {fileID: 2800000, guid: ebaad8b794cfbde41a2c85d709a1884c, type: 3}
+  - {fileID: 2800000, guid: 1a691883e00cca24e97d3a11fe55ec44, type: 3}
+  - {fileID: 2800000, guid: 4b9fd0c548c63434986c5c89466c0f5e, type: 3}
+  - {fileID: 2800000, guid: 75598c8363a641d44b47e8ddfeb0c29c, type: 3}
+  - {fileID: 2800000, guid: ef2a53008eef472498ef55b4f1299e89, type: 3}
+  - {fileID: 2800000, guid: 7f15e035678b17d4abe27e57b7381091, type: 3}
+  - {fileID: 2800000, guid: f25f23de56dbc6141921541c851b4050, type: 3}
+  - {fileID: 2800000, guid: 9971e335599bf5b4d92d612ebe24af2d, type: 3}
+  - {fileID: 2800000, guid: 68fdcaaac87402e4496f1224624e6369, type: 3}
+  - {fileID: 2800000, guid: c07f75e0830f1ce4190fe15004e28556, type: 3}
+  - {fileID: 2800000, guid: d76312e2bfcea1e46be742bd5138f33c, type: 3}
+  - {fileID: 2800000, guid: 65de6d77cd31e4048b78445619b26081, type: 3}
+  - {fileID: 2800000, guid: 70349a743031dbb4b83bc62c6419384d, type: 3}
+  - {fileID: 2800000, guid: c9697a4473905b748aa819ec882db7cc, type: 3}
+  - {fileID: 2800000, guid: fb3874ce281811d4d9ec1f6c18b08d90, type: 3}
+  - {fileID: 2800000, guid: d6c8e966bcdefff4797ec0e7513a5f56, type: 3}
+  - {fileID: 2800000, guid: 375edc57d6203294588f5aa3f2659035, type: 3}
+  - {fileID: 2800000, guid: 8ae0a2c5b323c8442ae221205a79d5f0, type: 3}
+  - {fileID: 2800000, guid: 6baf56cb83aa861468197a9b0103a093, type: 3}
+  - {fileID: 2800000, guid: 0ecb5184d12dc7241a00a5d10dd14932, type: 3}
 --- !u!1 &1922993177
 GameObject:
   m_ObjectHideFlags: 0
