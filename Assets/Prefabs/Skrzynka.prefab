@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf9ef6b0f15f2c49951b96729dcbf8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howFar: 4
-  howDown: 0.37
+  howFar: 3.5
+  howDown: -0.2
+  howRight: 0.5
   sensitivity: 3037
   MaxDistance: 5
-  rotation: {x: 0, y: 0, z: 0}
+  overrideRotation: 0
+  specialRotation: {x: 0, y: 0, z: 0}
+  _debug: 0
 --- !u!1001 &8777070358600529602
 PrefabInstance:
   m_ObjectHideFlags: 0

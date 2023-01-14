@@ -93263,6 +93263,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1607226157}
     m_Modifications:
+    - target: {fileID: 1057211438, guid: b62fbe15100465a4f9e2c67b004534fa, type: 3}
+      propertyPath: howFar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057211438, guid: b62fbe15100465a4f9e2c67b004534fa, type: 3}
+      propertyPath: howDown
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057211438, guid: b62fbe15100465a4f9e2c67b004534fa, type: 3}
+      propertyPath: howRight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8776033575533584088, guid: b62fbe15100465a4f9e2c67b004534fa, type: 3}
       propertyPath: m_Name
       value: ForestCrate
