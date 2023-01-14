@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1134,6 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartUpEkran: {fileID: 9140568725673975463, guid: 05a511e9df523724f8d1d0c99d58cca1, type: 3}
+  LoginEkran: {fileID: 9140568725673975463, guid: 7b6e49494dc877c4e9793f034586845b, type: 3}
   bootImages:
   - {fileID: 2800000, guid: bbdd1f10b0124054b97ca09d3aa30a1b, type: 3}
   - {fileID: 2800000, guid: 4ba04731014ba4e4e92e9d52aa71cd4d, type: 3}
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 20113c6313069fb44bd13d8a1c01a5cb, type: 3}
   - {fileID: 2800000, guid: 60b8565355617af4c9b614d2aecb534b, type: 3}
   - {fileID: 2800000, guid: 87e9478aa62cca848bbb929e7a8faf51, type: 3}
+  - {fileID: 2800000, guid: 7ad8172610878624da34d8a3108332b3, type: 3}
 --- !u!1 &1922993177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1446,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a367508206c1cc4497a6f70da0089f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7561983380839114418, guid: 2a367508206c1cc4497a6f70da0089f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.043
+      objectReference: {fileID: 0}
+    - target: {fileID: -7561983380839114418, guid: 2a367508206c1cc4497a6f70da0089f3, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2a367508206c1cc4497a6f70da0089f3, type: 3}

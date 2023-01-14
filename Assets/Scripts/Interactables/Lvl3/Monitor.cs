@@ -23,7 +23,7 @@ public class Monitor : MonoBehaviour
     GameObject ekranMiddle;
     public IEnumerator Init()
     {
-        yield return new WaitForSeconds(1.25f);
+        /*yield return new WaitForSeconds(1.25f);
         ekranMiddle = Instantiate(StartUpEkran, middle);
 
 
@@ -36,11 +36,36 @@ public class Monitor : MonoBehaviour
         yield return new WaitForSeconds(3.5f);
         ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", bootImages.Last());
         Destroy(ekranMiddle);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(3.5f);*/
 
 
         ekranMiddle = Instantiate(LoginEkran, middle);
         yield return new WaitForSeconds(.001f);
+    }
+
+
+
+    public void Next(GameObject ekran, int monitor)
+    {
+        Destroy(ekranMiddle);
+/*        switch (monitor)
+        {
+            case 0:
+                ekranMiddle = Instantiate(ekran, left);
+                break;
+            case 1:
+                ekranMiddle = Instantiate(ekran, middle);
+                break;
+            default:
+                ekranMiddle = Instantiate(ekran, right);
+                break;
+        }*/
+    }
+
+
+    public void EndSecret()
+    {
+
     }
 
 }
