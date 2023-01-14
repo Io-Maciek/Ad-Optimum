@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pochodnia : BetterHolding
 {
     ParticleSystem[] _fire;
+    Light _beam_me_up_scotty;
     bool IamFuming = false;
     Animator anime;
 
@@ -12,17 +13,21 @@ public class Pochodnia : BetterHolding
     {
         base.Awake();
         _fire = GetComponentsInChildren<ParticleSystem>();
+        _beam_me_up_scotty = GetComponentInChildren<Light>();
+        _beam_me_up_scotty.enabled = false;
         anime = GetComponent<Animator>();
     }
 
     public void FireItUp()
     {
         foreach (var particle in _fire) particle.Play();
+        _beam_me_up_scotty.enabled = true;
     }
 
     public void Extinguish()
     {
         foreach (var particle in _fire) particle.Stop();
+        _beam_me_up_scotty.enabled = false;
     }
 
     protected override void Update()

@@ -19,6 +19,11 @@ public class LawkaSitScript : Interactable
     }
 
 
+    protected virtual Vector3 WhereToSit()
+    {
+        return transform.position + Vector3.up * 0.5f;
+    }
+
 
     IEnumerator SitOn()
     {
@@ -29,7 +34,7 @@ public class LawkaSitScript : Interactable
 
         isBeinSittinOn = true;
         save_pos = playerObject.transform.position;
-        playerObject.transform.position = transform.position + Vector3.up * 0.5f;
+        playerObject.transform.position = WhereToSit();
         playerObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         playerObject.GetComponent<Rigidbody>().detectCollisions = false;
         playerObject.GetComponent<Rigidbody>().useGravity = false;
