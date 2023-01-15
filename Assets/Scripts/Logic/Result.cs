@@ -1,5 +1,4 @@
 using System;
-using static UnityEditor.Progress;
 
 /// <summary>
 /// Class that handles return values in <see href="https://www.rust-lang.org/">Rust</see>-Like style from methods in form of <see cref="Ok"/> and <see cref="Err(E)"/> using method <see cref="Match(System.Action, System.Action{E})"/>.
