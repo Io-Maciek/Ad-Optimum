@@ -17,6 +17,8 @@ public class Monitor : MonoBehaviour
 
     public GameObject sekretEndScreen;
     public List<Texture2D> secretBootImages;
+    public AudioClip endingEpicMusic;
+
 
     void Awake()
     {
@@ -64,11 +66,25 @@ public class Monitor : MonoBehaviour
     public void EndSecret()
     {
         Destroy(ekranMiddle);
-        StartCoroutine("_init");
+        StartCoroutine("_init_secret");
     }
 
-    IEnumerator _init()
+    IEnumerator _init_secret()
     {
+        FindObjectOfType<PauzerScript>().enabled = false;
+        Controller playerController = GetComponentInChildren<Controller>();
+        playerController.Camera.GetComponent<AudioSource>().Stop();
+        playerController.Camera.GetComponent<AudioSource>().clip = endingEpicMusic;
+        playerController.Camera.GetComponent<AudioSource>().Play();
+
+
+        playerController.mouseMovement.enabled = false;
+        playerController.interaction.enabled = false;
+        playerController.Camera.transform.LookAt(middle);
+        playerController.Camera.GetComponent<Animator>().SetBool("setEnd", true);
+        // paski cutscenki u góry i do³u
+        // TODO wy³¹cz kursor + animacja ruchu do przodu do monitora
+
         GameInfo.SetEndToSeen(2);
         yield return new WaitForSeconds(2.5f);
         ekranMiddle = Instantiate(sekretEndScreen, middle);

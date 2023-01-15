@@ -21,6 +21,8 @@ public class MonitorOstatniSit : Interactable
 
     IEnumerator SitOn()
     {
+        playerObject.transform.parent = wyswietlacz.transform;
+
         Controller _c = playerObject.GetComponent<Controller>();
         _c.movement.enabled = false;
         _c.interaction.enabled = false;
