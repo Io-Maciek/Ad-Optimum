@@ -23,7 +23,6 @@ namespace Assets.Scripts.Logic.GameSaves
             {
                 Debug.Log(item);
             }
-
         }
     }
 }

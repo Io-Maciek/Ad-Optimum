@@ -14,16 +14,16 @@ namespace Assets.Scripts.Logic.GameSaves
 
         public abstract string pattern { get; }
 
-        public Result<string[]> GetFilesFromDocuments()
+        public Result<string[], string> GetFilesFromDocuments()
         {
             try
             {
                 string[] files = Directory.GetFiles(_GAME, pattern);
-                return Result<string[]>.Err(files);
+                return Result<string[], string>.Ok(files);
             }
             catch (DirectoryNotFoundException)
             {
-                return Result<string[]>.Ok();
+                return Result<string[],string>.Err("NoDir");
             }
         }
 

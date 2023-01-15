@@ -69,6 +69,7 @@ public class Monitor : MonoBehaviour
 
     IEnumerator _init()
     {
+        GameInfo.SetEndToSeen(2);
         yield return new WaitForSeconds(2.5f);
         ekranMiddle = Instantiate(sekretEndScreen, middle);
 

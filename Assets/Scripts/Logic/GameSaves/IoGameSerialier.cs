@@ -8,7 +8,7 @@ namespace Assets.Scripts.Logic.GameSaves
 {
     public class IoGameSerialier : GameSavesSerialier
     {
-        public override string pattern => "*.io";
+        public override string pattern => "save*.io";
 
         public override void Overwrite(GameSave save)
         {
@@ -25,14 +25,9 @@ namespace Assets.Scripts.Logic.GameSaves
 
         public override List<GameSave> Read()
         {
-            Result<string[]> res_files = GetFilesFromDocuments();
+            Result<string[], string> res_files = GetFilesFromDocuments();
 
             return res_files.Match(
-                () =>
-                    {
-                        UnityEngine.Debug.Log("NIE MA");
-                        return new List<GameSave>();
-                    },
                 (files) =>
                     {
                         List<GameSave> result = new List<GameSave>();
@@ -55,7 +50,11 @@ namespace Assets.Scripts.Logic.GameSaves
 
                         }
                         return result;
-
+                    },
+                (err) =>
+                    {
+                        UnityEngine.Debug.Log(err);
+                        return new List<GameSave>();
                     }
             );
         }
