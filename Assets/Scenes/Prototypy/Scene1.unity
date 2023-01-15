@@ -1133,6 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e25f2fc6b013148b8d8a5787930e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugSkip: 1
   StartUpEkran: {fileID: 9140568725673975463, guid: 05a511e9df523724f8d1d0c99d58cca1, type: 3}
   LoginEkran: {fileID: 9140568725673975463, guid: 7b6e49494dc877c4e9793f034586845b, type: 3}
   bootImages:
@@ -1486,30 +1487,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a367508206c1cc4497a6f70da0089f3, type: 3}
---- !u!1 &2123197504 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2944148932499958791, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-  m_PrefabInstance: {fileID: 2944148932572986371}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2123197505
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123197504}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ce4bcf429d21b042a9999082447c5eb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2133597480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,41 +1589,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1752187819305421542, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: howFar
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752187819305421542, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: specialRotation.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752187819305421542, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: specialRotation.z
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2944148932499958791, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
       propertyPath: m_Name
       value: Pochodnia
       objectReference: {fileID: 0}
-    - target: {fileID: 2944148932499958793, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2944148932499958795, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944148932499958795, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.10000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944148932499958795, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944148932499958795, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1000001
       objectReference: {fileID: 0}
     - target: {fileID: 2944148932499958795, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
       propertyPath: m_LocalPosition.x

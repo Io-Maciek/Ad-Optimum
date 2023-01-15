@@ -25,7 +25,7 @@ public class LogInDisplay : Interactable
         else // normalne
         {
             Debug.Log("Normalne");
-            monitor.Next(nextEkran, 1);
+            monitor.StartCoroutine("NextMiddle", nextEkran);
         }
 
 

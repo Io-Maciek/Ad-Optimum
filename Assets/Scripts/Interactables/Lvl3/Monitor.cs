@@ -9,6 +9,8 @@ public class Monitor : MonoBehaviour
     Transform left;
     Transform right;
 
+
+    public bool debugSkip = false;
     public GameObject StartUpEkran;
     public GameObject LoginEkran;
     public List<Texture2D> bootImages;
@@ -26,20 +28,23 @@ public class Monitor : MonoBehaviour
     GameObject ekranMiddle;
     public IEnumerator Init()
     {
-        /*yield return new WaitForSeconds(1.25f);
-        ekranMiddle = Instantiate(StartUpEkran, middle);
-
-
-        foreach (var texture in bootImages.GetRange(0,bootImages.Count-1))
+        if (!debugSkip)
         {
-            yield return new WaitForSeconds(Random.Range(0.75f, 1.5f));
-            ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
-        }
+            yield return new WaitForSeconds(1.25f);
+            ekranMiddle = Instantiate(StartUpEkran, middle);
 
-        yield return new WaitForSeconds(3.5f);
-        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", bootImages.Last());
-        Destroy(ekranMiddle);
-        yield return new WaitForSeconds(3.5f);*/
+
+            foreach (var texture in bootImages.GetRange(0, bootImages.Count - 1))
+            {
+                yield return new WaitForSeconds(Random.Range(0.75f, 1.5f));
+                ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
+            }
+
+            yield return new WaitForSeconds(3.5f);
+            ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", bootImages.Last());
+            Destroy(ekranMiddle);
+            yield return new WaitForSeconds(3.5f);
+        }
 
 
         ekranMiddle = Instantiate(LoginEkran, middle);
@@ -48,21 +53,11 @@ public class Monitor : MonoBehaviour
 
 
 
-    public void Next(GameObject ekran, int monitor)
+    public IEnumerator NextMiddle(GameObject ekran)
     {
         Destroy(ekranMiddle);
-/*        switch (monitor)
-        {
-            case 0:
-                ekranMiddle = Instantiate(ekran, left);
-                break;
-            case 1:
-                ekranMiddle = Instantiate(ekran, middle);
-                break;
-            default:
-                ekranMiddle = Instantiate(ekran, right);
-                break;
-        }*/
+        yield return new WaitForSeconds(3.5f);
+        ekranMiddle = Instantiate(ekran, middle);
     }
 
 
@@ -77,7 +72,7 @@ public class Monitor : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         ekranMiddle = Instantiate(sekretEndScreen, middle);
 
-        foreach (var img in secretBootImages.GetRange(0,16))
+        foreach (var img in secretBootImages.GetRange(0, 16))
         {
             yield return new WaitForSeconds(Random.Range(0.75f, 1.5f));
             ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", img);

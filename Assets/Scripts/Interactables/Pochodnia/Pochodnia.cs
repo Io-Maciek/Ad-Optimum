@@ -20,14 +20,28 @@ public class Pochodnia : BetterHolding
 
     public void FireItUp()
     {
-        foreach (var particle in _fire) particle.Play();
-        _beam_me_up_scotty.enabled = true;
+        if (!IamFuming)
+        {
+            IamFuming = true;
+            foreach (var particle in _fire) particle.Play();
+            _beam_me_up_scotty.enabled = true;
+        }
     }
 
     public void Extinguish()
     {
-        foreach (var particle in _fire) particle.Stop();
-        _beam_me_up_scotty.enabled = false;
+        if (IamFuming)
+        {
+            IamFuming = false;
+            foreach (var particle in _fire) particle.Stop();
+            _beam_me_up_scotty.enabled = false;
+        }
+    }
+
+    protected override void LetGo()
+    {
+        base.LetGo();
+        Extinguish();
     }
 
     protected override void Update()
@@ -35,17 +49,6 @@ public class Pochodnia : BetterHolding
         base.Update();
         if (isGrabbed)
         {
-
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                if (IamFuming)
-                    FireItUp();
-                else
-                    Extinguish();
-                IamFuming = !IamFuming;
-            }
-
-
             if (Input.GetKeyDown(KeyCode.C))
             {
                 /*rb.detectCollisions = false;

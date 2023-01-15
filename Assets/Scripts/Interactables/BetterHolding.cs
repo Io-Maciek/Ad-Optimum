@@ -52,10 +52,10 @@ public class BetterHolding : Interactable
             rb = GetComponent<Rigidbody>();
         }
 
-        return use();
+        return Use();
     }
 
-    Result<object, string> use()
+    protected virtual Result<object, string> Use()
     {
         isGrabbed = true;
         controller.interaction.enabled = false;
@@ -74,7 +74,7 @@ public class BetterHolding : Interactable
         return Result<object, string>.Ok(null);
     }
 
-    void LetGo()
+    protected virtual void LetGo()
     {
         isGrabbed = false;
         rb.useGravity = true;
