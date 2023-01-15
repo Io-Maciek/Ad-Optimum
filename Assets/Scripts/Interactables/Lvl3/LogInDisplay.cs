@@ -14,7 +14,7 @@ public class LogInDisplay : Interactable
         if(monitor == null)
         {
             monitor = transform.parent.parent.parent.GetComponent<Monitor>();
-            //ApplicationModelInfo.GameSave.SecretNumber[0] = true;
+            ApplicationModelInfo.GameSave.SecretNumber[0] = true;
         }
 
         if( ApplicationModelInfo.GameSave.SecretNumber.All(s => s == true)) // ukryte zakoñczenie
