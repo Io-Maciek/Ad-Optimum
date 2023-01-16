@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Profiling;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -53,10 +54,24 @@ public class Movement : MonoBehaviour
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
 
         rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
-        if (OnGround && Input.GetAxis("Jump")>0.0)
+
+
+
+        JumpCheck();
+    }
+
+    bool jump_button_in_use = false;
+    void JumpCheck()
+    {
+        float jump_axis = Input.GetAxis("Jump");
+        if (OnGround && !jump_button_in_use && jump_axis > 0.0f)
         {
+            jump_button_in_use = true;
             OnGround = false;
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
+        }else if(jump_button_in_use && jump_axis <= 0.0f)
+        {
+            jump_button_in_use = false;
         }
     }
 
@@ -86,4 +101,13 @@ public class Movement : MonoBehaviour
         return false;
     }
 
+/*    private void OnTriggerEnter(Collider other)
+    {
+        OnGround = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        OnGround = false;
+    }*/
 }
