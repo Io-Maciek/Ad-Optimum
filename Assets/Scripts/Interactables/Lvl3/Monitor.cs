@@ -78,6 +78,7 @@ public class Monitor : MonoBehaviour
 
         playerController.mouseMovement.enabled = false;
         playerController.interaction.enabled = false;
+        playerController.anim.enabled = true;
         playerController.Camera.transform.LookAt(middle);
         playerController.Camera.GetComponent<Animator>().SetBool("setEnd", true);
         // TODO paski cutscenki u góry i do³u

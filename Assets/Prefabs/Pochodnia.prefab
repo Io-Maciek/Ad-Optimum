@@ -9762,6 +9762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d889631572013654a87a6dfb1b1a3d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsImportant: 1
   howFar: 1.8
   howDown: 0.2
   howRight: 0.75

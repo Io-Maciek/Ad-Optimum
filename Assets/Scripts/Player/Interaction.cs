@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
@@ -11,58 +12,74 @@ public class Interaction : MonoBehaviour
     public float interactionMaxDistance = 5.0f;
     public bool showDebugRay = false;
 
-    Holding usedObject = null;
+    Controller controller;
 
     void Start()
     {
         camera = transform.Find("PlayerCamera").transform;
+        controller = GetComponent<Controller>();
     }
 
 
     void Update()
     {
+        Interactable obj;
+        ThrowRaycast(out obj);
+
         if (!KeyPressedDown && Input.GetAxis("Use") >= .97)
         {
             KeyPressedDown = true;
-            if (usedObject == null)
+            if (showDebugRay)
+                Debug.DrawRay(camera.position, camera.forward * interactionMaxDistance, Color.red, 2);
+
+            if (obj != null)
             {
-                Ray ray = new Ray(camera.position, camera.forward);
-                if (showDebugRay)
-                    Debug.DrawRay(camera.position, camera.forward * interactionMaxDistance, Color.red, 2);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, interactionMaxDistance))
-                {
-                    GameObject obj = hit.collider.gameObject;
-                    if (obj.tag == "Interactable")
-                    {
-                        usedObject = obj.GetComponent<Holding>();
-                        if (usedObject != null)
-                        {
-                            usedObject.Action(gameObject).GetOk();
-                        }
-                        else
-                        {
-                            obj.GetComponent<Interactable>().Action(gameObject).Match(
-                              (obj) =>
-                              {
-                              },
-                              (err) =>
-                              {
-                                  Debug.LogWarning(err);
-                              });
-                        }
-                    }
-                }
-            }
-            else
-            {
-                usedObject.LetItGo();
-                usedObject = null;
+                obj.GetComponent<Interactable>().Action(gameObject).IgnoreOk().Match(
+                  (err) =>
+                  {
+                      Debug.LogWarning(err);
+                  });
             }
         }
         else if (KeyPressedDown && Input.GetAxis("Use") == 0.0)
         {
             KeyPressedDown = false;
+        }
+    }
+
+    private void ThrowRaycast(out Interactable obj)
+    {
+        obj = null;
+        Ray ray = new Ray(camera.position, camera.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, interactionMaxDistance))
+        {
+            obj = hit.collider.gameObject.GetComponent<Interactable>();
+            ColorUI(obj);
+        }
+        else
+        {
+            controller.playerUI.crosshair.GetComponent<RawImage>().color = Color.white;
+        }
+    }
+
+    private void ColorUI(Interactable obj)
+    {
+        if (obj == null)
+        {
+            controller.playerUI.crosshair.GetComponent<RawImage>().color = Color.white;
+        }
+        else
+        {
+            if (obj.IsImportant)
+            {
+                controller.playerUI.crosshair.GetComponent<RawImage>().color = Color.green;
+            }
+            else
+            {
+                controller.playerUI.crosshair.GetComponent<RawImage>().color = Color.white;
+
+            }
         }
     }
 }

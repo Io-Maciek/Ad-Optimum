@@ -10,13 +10,17 @@ public class Controller : MonoBehaviour
     public MouseLooking mouseMovement { get; private set; }
     public Movement movement { get; private set; }
     public Interaction interaction { get; private set; }
+    public Animator anim { get; private set; }
 
 
+    public PlayerUI playerUI;
     public GameObject eye_prefab;
 
     private void Awake()
     {
         Camera=transform.Find("PlayerCamera").gameObject;
+        anim = Camera.GetComponent<Animator>();
+        anim.enabled = false;
         MainMusicSource = Camera.GetComponent<AudioSource>();
         mouseMovement = GetComponent<MouseLooking>();
         movement = GetComponent<Movement>();
