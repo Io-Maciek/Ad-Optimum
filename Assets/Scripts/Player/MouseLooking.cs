@@ -25,5 +25,5 @@ public class MouseLooking : MonoBehaviour
 
         camera.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);//vertical - camera
         transform.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);//horizontal - player
-    }// TODO cos tu jest mocno zbugowane
+    }// TODO cos tu jest mocno zbugowane | trzeba wylaczyc Animator -a
 }

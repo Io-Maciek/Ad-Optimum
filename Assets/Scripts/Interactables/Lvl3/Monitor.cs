@@ -80,8 +80,7 @@ public class Monitor : MonoBehaviour
         playerController.interaction.enabled = false;
         playerController.Camera.transform.LookAt(middle);
         playerController.Camera.GetComponent<Animator>().SetBool("setEnd", true);
-        // paski cutscenki u góry i do³u
-        // TODO wy³¹cz kursor + animacja ruchu do przodu do monitora
+        // TODO paski cutscenki u góry i do³u
         GameInfo.SetEndToSeen(2);
 
 
@@ -118,7 +117,7 @@ public class Monitor : MonoBehaviour
         playerController.Camera.GetComponent<AudioSource>().Stop();
         playerController.Camera.GetComponent<AudioSource>().clip = endingEpicMusic;
         playerController.Camera.GetComponent<AudioSource>().Play();
-        yield return _set(3.37f);//Ewak .       //TODO literowka ewakYacyjnej
+        yield return _set(3.37f);//Ewak .
         yield return _set(2.73f);//Ewak ..
         yield return _set(4.37f);//Ewak ...
         yield return _set(4f);//Ewak [x]
