@@ -47,6 +47,7 @@ public class PlanszaInfo : MonoBehaviour
         if (last_seen != null)
         {
             GameObject.Find("Player").transform.position = last_seen.tp_home;
+            GameObject.Find("Player").GetComponent<Controller>().CameraSet(last_seen.transform.localEulerAngles.y - 90);
         }
         ApplicationModelInfo.GameSave.Save();
 

@@ -37,19 +37,25 @@ public class Controller : MonoBehaviour
     private GameObject _eye;
     public IEnumerator CloseEye(float time)
     {
-        mouseMovement.enabled = false;
         _eye = Instantiate(eye_prefab);
         _eye.GetComponent<Animator>().SetBool("close", true);
         yield return new WaitForSeconds(time);
-        mouseMovement.enabled = true;
     }
 
     public IEnumerator OpenEye(float time)
     {
-        mouseMovement.enabled = false;
         _eye.GetComponent<Animator>().SetBool("close", false);
         yield return new WaitForSeconds(time);
         Destroy(_eye);
-        mouseMovement.enabled = true;
+    }
+
+    public float CameraLook(float x)
+    {
+        return GetComponent<MouseLooking>().LookAt(x);
+    }
+
+    public void CameraSet(float x)
+    {
+        GetComponent<MouseLooking>().SetTo(x);
     }
 }

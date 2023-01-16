@@ -7,6 +7,8 @@ public class MouseLooking : MonoBehaviour
     new Transform camera;
     Vector2 velocity;
 
+    public float offset = 0f;
+
     [Range(0f, 10f)]
     public float sensitivity = 2.0f;
 
@@ -24,6 +26,21 @@ public class MouseLooking : MonoBehaviour
         velocity.y = Mathf.Clamp(velocity.y, -90, 90);//keeps it in min/max 
 
         camera.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);//vertical - camera
-        transform.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);//horizontal - player
-    }// TODO cos tu jest mocno zbugowane | trzeba wylaczyc Animator -a
+        transform.localRotation = Quaternion.AngleAxis(velocity.x + offset, Vector3.up);//horizontal - player
+    }
+
+
+    public float LookAt(float rotationX)
+    {
+        float prev = offset;
+        float dif = rotationX - (transform.eulerAngles.y+offset);
+        //Debug.Log($"{transform.eulerAngles.y} + {offset} - {rotationX}  =  {dif}");
+        offset = dif;
+        return prev;
+    }
+
+    public void SetTo(float rotationX)
+    {
+        offset = rotationX;
+    }
 }

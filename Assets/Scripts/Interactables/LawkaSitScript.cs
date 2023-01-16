@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LawkaSitScript : Interactable
 {
@@ -24,12 +25,13 @@ public class LawkaSitScript : Interactable
         return transform.position + Vector3.up * 0.5f;
     }
 
-
+    float prev;
     IEnumerator SitOn()
     {
         Controller _c = playerObject.GetComponent<Controller>();
         _c.movement.enabled = false;
         _c.interaction.enabled = false;
+        _c.mouseMovement.enabled = false;
         yield return _c.StartCoroutine("CloseEye", 1.0f);
 
         isBeinSittinOn = true;
@@ -39,6 +41,12 @@ public class LawkaSitScript : Interactable
         playerObject.GetComponent<Rigidbody>().detectCollisions = false;
         playerObject.GetComponent<Rigidbody>().useGravity = false;
         //playerObject.transform.localRotation = Quaternion.Euler(0, 1, 0);
+        _c.mouseMovement.enabled = true;
+
+
+        //Debug.Log(transform.localEulerAngles.y-90);
+        prev = _c.CameraLook(transform.localEulerAngles.y - 90);
+
 
         yield return _c.StartCoroutine("OpenEye", 1.0f);
     }
@@ -48,6 +56,7 @@ public class LawkaSitScript : Interactable
     {
         isBeinSittinOn = false;
         Controller _c = playerObject.GetComponent<Controller>();
+        _c.mouseMovement.enabled = false;
 
         yield return _c.StartCoroutine("CloseEye", 1.0f);
 
@@ -55,7 +64,8 @@ public class LawkaSitScript : Interactable
         playerObject.GetComponent<Rigidbody>().useGravity = true;
         playerObject.transform.position = save_pos;
         //playerObject.transform.parent = null;
-
+        _c.CameraSet(prev);
+        _c.mouseMovement.enabled = true;
 
 
         yield return _c.StartCoroutine("OpenEye", 1.0f);

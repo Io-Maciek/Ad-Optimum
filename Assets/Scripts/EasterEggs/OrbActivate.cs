@@ -25,6 +25,7 @@ public class OrbActivate : Interactable
     {
         if (!wasEnabled)
         {
+            IsImportant = false;
             t = 0.0f;
             wasEnabled = true;
             ParentSekret.Activate();

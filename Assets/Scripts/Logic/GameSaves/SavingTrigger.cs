@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Blue arraw in Unity Editor show where player will look after loading.
+/// </summary>
 public class SavingTrigger : MonoBehaviour
 {
     public Vector3 tp_home { get; private set; }

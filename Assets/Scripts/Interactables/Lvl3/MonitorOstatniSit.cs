@@ -26,6 +26,7 @@ public class MonitorOstatniSit : Interactable
         Controller _c = playerObject.GetComponent<Controller>();
         _c.movement.enabled = false;
         _c.interaction.enabled = false;
+        _c.mouseMovement.enabled = false;
         yield return _c.StartCoroutine("CloseEye", 1.0f);
 
         playerObject.transform.position = sitter.position + Vector3.up * 0.5f;
@@ -33,6 +34,7 @@ public class MonitorOstatniSit : Interactable
         playerObject.GetComponent<Rigidbody>().detectCollisions = false;
         playerObject.GetComponent<Rigidbody>().useGravity = false;
         //playerObject.transform.localRotation = Quaternion.Euler(0, 1, 0);
+        _c.mouseMovement.enabled = true;
 
         yield return _c.StartCoroutine("OpenEye", 1.0f);
         _c.interaction.enabled = true;
