@@ -122,7 +122,10 @@ public class Monitor : MonoBehaviour
         yield return _set(2.73f);//Ewak ..
         yield return _set(4.37f);//Ewak ...
         yield return _set(4f);//Ewak [x]
-        yield return _set(.1f);//otwarcie drzwi
+        yield return _set(2f);//otwarcie drzwi
+
+        var _eye = Instantiate(playerController.eye_prefab);
+        _eye.GetComponent<Animator>().SetBool("close", true);
 
 
 
