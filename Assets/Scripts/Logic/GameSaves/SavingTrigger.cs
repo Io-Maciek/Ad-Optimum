@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// Blue arraw in Unity Editor show where player will look after loading.
+/// Blue arrow in Unity Editor show where player will look after loading.
 /// </summary>
 public class SavingTrigger : MonoBehaviour
 {

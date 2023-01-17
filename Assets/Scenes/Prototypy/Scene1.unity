@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e25f2fc6b013148b8d8a5787930e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugSkip: 1
+  debugSkip: 0
   StartUpEkran: {fileID: 9140568725673975463, guid: 05a511e9df523724f8d1d0c99d58cca1, type: 3}
   LoginEkran: {fileID: 9140568725673975463, guid: 7b6e49494dc877c4e9793f034586845b, type: 3}
   bootImages:
