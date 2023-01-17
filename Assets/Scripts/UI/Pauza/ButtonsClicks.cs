@@ -10,6 +10,8 @@ public class ButtonsClicks : MonoBehaviour
 {
     Button btnDoMenu;
     Button btnDoGry;
+    Button btnOpcjeShow;
+    public GameObject opcjeMenu;
 
     PauzerScript pauzer;
     void Start()
@@ -17,12 +19,16 @@ public class ButtonsClicks : MonoBehaviour
         pauzer = FindObjectOfType<PauzerScript>();
         btnDoMenu = _get(nameof(btnDoMenu), doMenu);
         btnDoGry = _get(nameof(btnDoGry), doGry);
+        btnOpcjeShow = _get(nameof(btnOpcjeShow), showOpcje);
+
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    void showOpcje()
     {
-        
+        var opcje = Instantiate(opcjeMenu, transform.parent);
+        opcje.GetComponent<OpcjeMenus>().poprzedniEkran = gameObject;
+        gameObject.SetActive(false);
     }
 
     void doMenu()

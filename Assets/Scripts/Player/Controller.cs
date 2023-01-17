@@ -16,6 +16,10 @@ public class Controller : MonoBehaviour
     public PlayerUI playerUI;
     public GameObject eye_prefab;
 
+
+    AudioSource audio;
+    float music_def;
+
     private void Awake()
     {
         Camera=transform.Find("PlayerCamera").gameObject;
@@ -25,6 +29,9 @@ public class Controller : MonoBehaviour
         mouseMovement = GetComponent<MouseLooking>();
         movement = GetComponent<Movement>();
         interaction = GetComponent<Interaction>();
+
+        audio = Camera.GetComponent<AudioSource>();
+        music_def = audio.volume;
     }
 
 
@@ -57,5 +64,12 @@ public class Controller : MonoBehaviour
     public void CameraSet(float x)
     {
         GetComponent<MouseLooking>().SetTo(x);
+    }
+
+
+
+    public void MusicSet(float new_value)
+    {
+        audio.volume = music_def*new_value;
     }
 }

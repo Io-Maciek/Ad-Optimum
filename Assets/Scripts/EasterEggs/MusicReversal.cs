@@ -32,11 +32,9 @@ public class MusicReversal : Sekret
         {
             Controller c = other.GetComponent<Controller>();
             prev = c.MainMusicSource.pitch;
-            vol = c.MainMusicSource.volume;
+            //vol = c.MainMusicSource.volume;
             c.MainMusicSource.pitch = -prev+.2f;
-            c.MainMusicSource.volume = vol + .1f;
-
-
+            //c.MainMusicSource.volume = vol * 1.1f;
         }
     }
 
@@ -46,7 +44,7 @@ public class MusicReversal : Sekret
         {
             Controller c = other.GetComponent<Controller>();
             c.MainMusicSource.pitch = prev;
-            c.MainMusicSource.volume = vol;
+            //c.MainMusicSource.volume = vol;
             Close();      
             seen = true;
         }

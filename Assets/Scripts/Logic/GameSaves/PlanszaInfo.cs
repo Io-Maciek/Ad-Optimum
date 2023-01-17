@@ -13,6 +13,7 @@ public class PlanszaInfo : MonoBehaviour
     public List<SavingTrigger> EYE_OF_THE_TRIGGER; 
 
     public AudioSource KontrolerAudio { get; private set; }
+    Controller p_controller;
 
     void Start()
     {
@@ -62,6 +63,12 @@ public class PlanszaInfo : MonoBehaviour
             }
 
         }
+
+
+
+
+        p_controller = FindObjectOfType<Controller>();
+        p_controller.MusicSet(PlayerPrefs.GetFloat("muzyka", 1.0f));
     }
 
     void Update()

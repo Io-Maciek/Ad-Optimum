@@ -1588,6 +1588,10 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 6811089801258119323}
+    - target: {fileID: 8203809195748524966, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: jumpHeight
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 8203809195748524971, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
       propertyPath: m_RootOrder
       value: 3

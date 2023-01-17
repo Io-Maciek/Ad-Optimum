@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
         {
             jump_button_in_use = true;
             OnGround = false;
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         }else if(jump_button_in_use && jump_axis <= 0.0f)
         {
             jump_button_in_use = false;
