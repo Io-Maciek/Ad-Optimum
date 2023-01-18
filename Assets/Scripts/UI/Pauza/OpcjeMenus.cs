@@ -47,7 +47,7 @@ public class OpcjeMenus : MonoBehaviour
 
 
         dropdownResolution = transform.Find("dropdownResolution").GetComponent<Dropdown>();
-        foreach (var _res in Screen.resolutions.OrderByDescending(r=>r.height*r.width))
+        foreach (var _res in Screen.resolutions.OrderByDescending(r => r.width).ThenByDescending(r => r.height).ThenByDescending(r => r.refreshRate))
         {
             Dropdown.OptionData option = new Dropdown.OptionData($"{_res.width} x {_res.height} {_res.refreshRate}FPS");
             dropdownResolution.options.Add(option);

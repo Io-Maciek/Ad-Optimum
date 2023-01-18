@@ -78,7 +78,7 @@ public class PlanszaInfo : MonoBehaviour
         bool isOn = PlayerPrefs.GetInt("fullscreen", 1) == 0;
         Screen.fullScreenMode = isOn? FullScreenMode.Windowed : FullScreenMode.FullScreenWindow;
 
-        var resols = Screen.resolutions.OrderByDescending(r => r.height * r.width).ToArray();
+        var resols = Screen.resolutions.OrderByDescending(r => r.width).ThenByDescending(r => r.height).ThenByDescending(r=>r.refreshRate).ToArray();
         int indexRes = PlayerPrefs.GetInt("resolution", 0);
         if (indexRes > resols.Length)
             indexRes = 0;
