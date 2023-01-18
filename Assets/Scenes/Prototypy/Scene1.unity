@@ -1419,6 +1419,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1752187819305421542, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
+      propertyPath: sensitivity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2944148932499958791, guid: 1b1a89a11d316164c9ddc71e69e1f893, type: 3}
       propertyPath: m_Name
       value: Pochodnia

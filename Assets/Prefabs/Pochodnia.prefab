@@ -9766,7 +9766,7 @@ MonoBehaviour:
   howFar: 1.8
   howDown: 0.2
   howRight: 0.75
-  sensitivity: 100
+  sensitivity: 200
   MaxDistance: 5
   overrideRotation: 1
   specialRotation: {x: 37, y: 5, z: 9}

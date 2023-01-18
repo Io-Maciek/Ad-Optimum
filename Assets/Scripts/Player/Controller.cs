@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour
     public GameObject eye_prefab;
 
 
-    AudioSource audio;
+    new AudioSource audio;
     float music_def;
 
     private void Awake()

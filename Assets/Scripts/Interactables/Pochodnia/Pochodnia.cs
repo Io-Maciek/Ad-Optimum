@@ -9,6 +9,8 @@ public class Pochodnia : BetterHolding
     bool IamFuming = false;
     Animator anime;
 
+    Vector3 vecTemp;
+    float temp;
     protected override void Awake()
     {
         base.Awake();
@@ -16,6 +18,8 @@ public class Pochodnia : BetterHolding
         _beam_me_up_scotty = GetComponentInChildren<Light>();
         _beam_me_up_scotty.enabled = false;
         anime = GetComponent<Animator>();
+        temp = howRight;
+        vecTemp = specialRotation;
     }
 
     public void FireItUp()
@@ -44,13 +48,15 @@ public class Pochodnia : BetterHolding
         Extinguish();
     }
 
+
     protected override void Update()
     {
-        base.Update();
         if (isGrabbed)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetAxis("Fire2")>0.0f)
             {
+                howRight = 0;
+                transform.localEulerAngles = new Vector3(specialRotation.x, 0, 0);
                 /*rb.detectCollisions = false;
                 rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
                 rb.isKinematic = true;
@@ -58,6 +64,12 @@ public class Pochodnia : BetterHolding
                 anime.SetBool("GET_ANGRY", true);*/
                 //rb.AddForce((-transform.right*20 + camera.transform.forward*15)*sensitivity);
             }
+            else 
+            { 
+                howRight = temp;
+                transform.localEulerAngles = specialRotation;
+            }
         }
+        base.Update();
     }
 }

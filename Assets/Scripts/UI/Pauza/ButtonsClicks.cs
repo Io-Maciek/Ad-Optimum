@@ -20,7 +20,6 @@ public class ButtonsClicks : MonoBehaviour
         btnDoMenu = _get(nameof(btnDoMenu), doMenu);
         btnDoGry = _get(nameof(btnDoGry), doGry);
         btnOpcjeShow = _get(nameof(btnOpcjeShow), showOpcje);
-
     }
 
    
@@ -54,6 +53,7 @@ public class ButtonsClicks : MonoBehaviour
         Button _btn = transform.Find(_button).GetComponent<Button>();
         _btn.onClick.AddListener(_onClick);
 
+        Debug.Log(_btn);
         return _btn;
     }
 }
