@@ -25638,6 +25638,7 @@ GameObject:
   - component: {fileID: 658404645}
   - component: {fileID: 658404649}
   - component: {fileID: 658404650}
+  - component: {fileID: 658404651}
   m_Layer: 0
   m_Name: przyciskPoziom0
   m_TagString: Untagged
@@ -25864,6 +25865,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &658404651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658404642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49c0536f25a48c4dab7c60098ed5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &660778757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2303838245118647302, guid: 8d371c1d43d56e94b93bffa2f926a5f1, type: 3}
@@ -44323,6 +44336,7 @@ GameObject:
   - component: {fileID: 1115441956}
   - component: {fileID: 1115441961}
   - component: {fileID: 1115441962}
+  - component: {fileID: 1115441963}
   m_Layer: 0
   m_Name: przyciskPoziom0 (1)
   m_TagString: Untagged
@@ -44549,6 +44563,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1115441963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115441954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49c0536f25a48c4dab7c60098ed5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1115780896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64830,6 +64856,7 @@ GameObject:
   - component: {fileID: 1595923926}
   - component: {fileID: 1595923927}
   - component: {fileID: 1595923928}
+  - component: {fileID: 1595923929}
   m_Layer: 0
   m_Name: przyciskTutorial
   m_TagString: Untagged
@@ -65055,6 +65082,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1595923929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595923920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49c0536f25a48c4dab7c60098ed5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1598413377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8209775890510335994, guid: c4fa87cd4eff4ae4ba4c8d1ad48df5f7, type: 3}

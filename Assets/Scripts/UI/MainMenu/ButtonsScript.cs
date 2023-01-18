@@ -11,8 +11,11 @@ public class ButtonsScript : MonoBehaviour
     public Button btnNewGame;
     public Button btnLoadGame;
     public Button btnExitGame;
+    public Button btnShowOpcje;
+    public GameObject MenuMain;
 
-
+    public GameObject opcjePrefab;
+    public new AudioSource audio;
 
 
     void Start()
@@ -20,10 +23,22 @@ public class ButtonsScript : MonoBehaviour
         btnNewGame.onClick.AddListener(btnNew);
         btnLoadGame.onClick.AddListener(btnLoad);
         btnExitGame.onClick.AddListener(btnExit);
+        btnShowOpcje.onClick.AddListener(btnOpcje);
+
+        audio = FindObjectOfType<AudioSource>();
+        audio.volume = 1.0f * PlayerPrefs.GetFloat("muzyka", 1.0f);
 
 
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+    }
+
+
+    void btnOpcje()
+    {
+        var x = Instantiate(opcjePrefab, transform);
+        x.GetComponent<OpcjeMenus>().poprzedniEkran = MenuMain;
+        MenuMain.SetActive(false);
     }
 
     void btnExit()

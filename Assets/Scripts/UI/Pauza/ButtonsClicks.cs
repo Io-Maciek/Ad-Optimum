@@ -52,8 +52,6 @@ public class ButtonsClicks : MonoBehaviour
     {
         Button _btn = transform.Find(_button).GetComponent<Button>();
         _btn.onClick.AddListener(_onClick);
-
-        Debug.Log(_btn);
         return _btn;
     }
 }

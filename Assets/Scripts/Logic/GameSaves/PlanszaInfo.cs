@@ -69,6 +69,11 @@ public class PlanszaInfo : MonoBehaviour
 
         p_controller = FindObjectOfType<Controller>();
         p_controller.MusicSet(PlayerPrefs.GetFloat("muzyka", 1.0f));
+        float fxVolue = PlayerPrefs.GetFloat("fx", 1.0f);
+        foreach (var fx in FindObjectsOfType<FX>())
+        {
+            fx.Set(fxVolue);
+        }
     }
 
     void Update()
