@@ -74,7 +74,7 @@ public class BetterHolding : Interactable
         return Result<object, string>.Ok(null);
     }
 
-    protected virtual void LetGo()
+    public virtual void LetGo()
     {
         isGrabbed = false;
         rb.useGravity = true;

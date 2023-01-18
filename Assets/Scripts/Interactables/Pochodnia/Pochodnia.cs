@@ -42,7 +42,7 @@ public class Pochodnia : BetterHolding
         }
     }
 
-    protected override void LetGo()
+    public override void LetGo()
     {
         base.LetGo();
         Extinguish();
