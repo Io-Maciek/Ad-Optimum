@@ -33,6 +33,17 @@ public class OpcjeMenus : MonoBehaviour
         {
             fx.Set(fxSlider.value);
         }
+
+        transform.Find("btnPrzywroc").GetComponent<Button>().onClick.AddListener(domyslne);
+    }
+
+    void domyslne()
+    {
+        muzykaChange(1f);
+        muzykaSlider.value = 1.0f;
+
+        fxChange(1f);
+        fxSlider.value = 1.0f;
     }
 
 
