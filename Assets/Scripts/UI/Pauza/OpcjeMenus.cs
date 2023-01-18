@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OpcjeMenus : MonoBehaviour
@@ -25,6 +26,8 @@ public class OpcjeMenus : MonoBehaviour
         muzykaSlider.onValueChanged.AddListener(muzykaChange);
         muzykaSlider.value = PlayerPrefs.GetFloat("muzyka", 1.0f);
         setFromMap();
+
+        EventSystem.current.SetSelectedGameObject(transform.Find("btnGoBack").gameObject);
 
         transform.Find("btnGoBack").GetComponent<Button>().onClick.AddListener(goBack);
         fxSlider = transform.Find("fxSlider").GetComponent<Slider>();
@@ -106,6 +109,8 @@ public class OpcjeMenus : MonoBehaviour
     void goBack()
     {
         poprzedniEkran.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(EventSystem.current.firstSelectedGameObject);
+
         Destroy(gameObject);
     }
 
