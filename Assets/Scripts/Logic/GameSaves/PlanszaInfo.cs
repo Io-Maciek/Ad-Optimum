@@ -74,6 +74,16 @@ public class PlanszaInfo : MonoBehaviour
         {
             fx.Set(fxVolue);
         }
+
+        bool isOn = PlayerPrefs.GetInt("fullscreen", 1) == 0;
+        Screen.fullScreenMode = isOn? FullScreenMode.Windowed : FullScreenMode.FullScreenWindow;
+
+        var resols = Screen.resolutions.OrderByDescending(r => r.height * r.width).ToArray();
+        int indexRes = PlayerPrefs.GetInt("resolution", 0);
+        if (indexRes > resols.Length)
+            indexRes = 0;
+        var res = resols[indexRes];
+        Screen.SetResolution(res.width, res.height, !isOn, res.refreshRate);
     }
 
     void Update()

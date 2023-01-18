@@ -15,7 +15,7 @@ public class ButtonsScript : MonoBehaviour
     public GameObject MenuMain;
 
     public GameObject opcjePrefab;
-    public new AudioSource audio;
+    public new AudioSource audio { get; private set; }
 
 
     void Start()

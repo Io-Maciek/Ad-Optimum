@@ -81,6 +81,7 @@ public class Monitor : MonoBehaviour
         playerController.anim.enabled = true;
         playerController.Camera.transform.LookAt(middle);
         playerController.Camera.GetComponent<Animator>().SetBool("setEnd", true);
+        playerController.playerUI.gameObject.SetActive(false);
         // TODO paski cutscenki u góry i do³u
         GameInfo.SetEndToSeen(2);
 
