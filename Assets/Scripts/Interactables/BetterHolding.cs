@@ -114,7 +114,6 @@ public class BetterHolding : Interactable
         if (isGrabbed)
         {
             var key = Input.GetAxis("Use");
-
             if (key == 0.0)
                 keyDown = false;
 

@@ -30,11 +30,11 @@ public class Climbing : MonoBehaviour
     {
         if (canClimb)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetAxisRaw("Vertical")>0.0f)
             {
                 playerOBJ.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetAxisRaw("Vertical") <0.0f)
             {
                 playerOBJ.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
             }

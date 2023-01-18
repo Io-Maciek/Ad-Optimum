@@ -99,12 +99,21 @@ public class PlanszaInfo : MonoBehaviour
             ApplicationModelInfo.GameSave.ProgressValue = ProgressValue;
             ApplicationModelInfo.GameSave.Save();
             Debug.Log($"Updated to {ProgressValue}");
+            if (!FindObjectOfType<Controller>().playerUI.transform.Find("Loading").gameObject.activeSelf)
+                StartCoroutine("_loadAnim");
         }
         else
         {
             ApplicationModelInfo.GameSave.Save();
             Debug.Log($"Progress just saved");
         }
+    }
+
+    IEnumerator _loadAnim()
+    {
+        FindObjectOfType<Controller>().playerUI.transform.Find("Loading").gameObject.SetActive(true);
+        yield return new WaitForSeconds(3.37f);
+        FindObjectOfType<Controller>().playerUI.transform.Find("Loading").gameObject.SetActive(false);
     }
 
 

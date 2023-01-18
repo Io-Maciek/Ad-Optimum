@@ -76,7 +76,7 @@ public class LawkaSitScript : Interactable
 
     private void FixedUpdate()
     {
-        if (isBeinSittinOn && Input.GetKeyDown(KeyCode.E))
+        if (isBeinSittinOn && Input.GetAxisRaw("Use")==1.0f)
         {
             StartCoroutine("StandUpcomedy");
         }

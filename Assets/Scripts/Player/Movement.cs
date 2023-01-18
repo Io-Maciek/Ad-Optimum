@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
         else
         {
             collider.height = 2f;
-            speedOfThatBoy = normalSpeed + runAddition * Input.GetAxis("Sprint");
+            speedOfThatBoy = normalSpeed + runAddition * Input.GetAxisRaw("Sprint");
         }
         
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
