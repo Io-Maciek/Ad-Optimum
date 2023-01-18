@@ -7,10 +7,10 @@ public class CameraShake : Activatable
 {
 	private Transform camTransform;
 
-	public float shakeDuration = 0f;
+	public float shakeDuration = 1f;
 
-	public float shakeAmount = 0.7f;
-	public float decreaseFactor = 1.0f;
+	public float shakeAmount = 0.4f;
+	public float decreaseFactor = 0.2f;
 
 	Vector3 originalPos;
 
