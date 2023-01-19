@@ -103,6 +103,9 @@ public class Movement : MonoBehaviour
         return false;
     }
 
+
+
+
 /*    private void OnTriggerEnter(Collider other)
     {
         OnGround = true;
