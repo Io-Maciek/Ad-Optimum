@@ -6,7 +6,7 @@ public class Pochodnia : BetterHolding
 {
     ParticleSystem[] _fire;
     Light _beam_me_up_scotty;
-    bool IamFuming = false;
+    public bool IamFuming = false;
     Animator anime;
 
     Vector3 vecTemp;

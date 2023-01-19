@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5854499482869613291}
   - component: {fileID: 1363666712964926524}
   - component: {fileID: 9076028995334780062}
+  - component: {fileID: 5925219395087544813}
   m_Layer: 0
   m_Name: IceBlock
   m_TagString: Untagged
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999998, y: 2, z: 2.0000005}
   m_Center: {x: -0.000000923872, y: 0, z: 0}
+--- !u!65 &5925219395087544813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208874950793523740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3523295, y: 2, z: 2.2959046}
+  m_Center: {x: -0.010515094, y: 0, z: 0.026896715}

@@ -21,4 +21,5 @@ public class IceBlockTest : Activatable
 
         return Result<object>.Ok();
     }
+
 }
