@@ -20,10 +20,15 @@ public class Movement : MonoBehaviour
 
     public float colliderSizeOnCrouch = 1.5f;
 
+    [Space]
+
+    public bool TestAntiSlide = true;
+
     Rigidbody rb;
     new CapsuleCollider collider;
 
     public bool OnGround { get; private set; }
+
 
     void Start()
     {
@@ -43,15 +48,16 @@ public class Movement : MonoBehaviour
         {
             speedOfThatBoy = crouchSpeed;
             collider.height = colliderSizeOnCrouch;
-            
+
         }
         else
         {
             collider.height = 2f;
             speedOfThatBoy = normalSpeed + runAddition * Input.GetAxisRaw("Sprint");
         }
-        
+
         Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
+
 
         rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
 
@@ -69,7 +75,8 @@ public class Movement : MonoBehaviour
             jump_button_in_use = true;
             OnGround = false;
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-        }else if(jump_button_in_use && jump_axis <= 0.0f)
+        }
+        else if (jump_button_in_use && jump_axis <= 0.0f)
         {
             jump_button_in_use = false;
         }
@@ -103,16 +110,18 @@ public class Movement : MonoBehaviour
         return false;
     }
 
+    /*
+        bool dotyka = false;
+        private void OnCollisionEnter(Collision collision)
+        {
+            dotyka = true;
+            var x = Vector3.Dot(transform.forward, collision.transform.position - transform.position);
+            Debug.Log(x);
+        }
 
+        private void OnCollisionExit(Collision collision)
+        {
+            dotyka = false;
+        }*/
 
-
-/*    private void OnTriggerEnter(Collider other)
-    {
-        OnGround = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        OnGround = false;
-    }*/
 }
