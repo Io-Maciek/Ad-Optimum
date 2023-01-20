@@ -26,6 +26,7 @@ public class GameSave
 
     public void Save()
     {
+        Debug.Log("save: "+ToString());
         new IoGameSerialier().Overwrite(this);
     }
 
