@@ -16,6 +16,7 @@ public class ButtonsScript : MonoBehaviour
 
     public GameObject opcjePrefab;
     public new AudioSource audio { get; private set; }
+    public GameObject zapisyMenu;
 
 
     void Start()
@@ -31,6 +32,11 @@ public class ButtonsScript : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+
+        if (new IoGameSerialier().Read().Count == 0)
+            btnLoadGame.gameObject.SetActive(false);
+        else
+            btnLoadGame.gameObject.SetActive(true);
     }
 
 
@@ -48,14 +54,23 @@ public class ButtonsScript : MonoBehaviour
 
     void btnNew()
     {
+        zapisyMenu.SetActive(true);
+        zapisyMenu.GetComponent<SavesLoader>().New();
+        MenuMain.SetActive(false);
+
+/*
         ApplicationModelInfo.GameSave = GameSave.NowaGra(0);
         ApplicationModelInfo.GameSave.Save();
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(1);*/
     }
 
     void btnLoad()
     {
-        var io = new IoGameSerialier();
+        zapisyMenu.SetActive(true);
+        zapisyMenu.GetComponent<SavesLoader>().Load();
+        MenuMain.SetActive(false);
+
+        /*var io = new IoGameSerialier();
         var files = io.Read();
         if (files.Count > 0)
         {
@@ -65,6 +80,6 @@ public class ButtonsScript : MonoBehaviour
                 ApplicationModelInfo.GameSave = _0;
                 SceneManager.LoadSceneAsync((int)ApplicationModelInfo.GameSave.SceneID);
             }
-        }
+        }*/
     }
 }

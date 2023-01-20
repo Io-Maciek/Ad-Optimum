@@ -20,7 +20,7 @@ public class PostawDrabine : MonoBehaviour
             other.GetComponent<Rigidbody>().isKinematic = true;
             holding.enabled = false;
             other.GetComponent<Climbing>().enabled = true;
-            other.transform.localEulerAngles = new Vector3(0, 0, 0);
+            other.transform.localEulerAngles = new Vector3(-10, 0, 0);
             other.transform.position = forDrabina.position;
         }
     }

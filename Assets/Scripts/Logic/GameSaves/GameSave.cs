@@ -26,13 +26,12 @@ public class GameSave
 
     public void Save()
     {
-        Debug.Log("save: "+ToString());
         new IoGameSerialier().Overwrite(this);
     }
 
-    public static GameSave NowaGra(int slot_id)
+    public static GameSave NowaGra(SaveShow show)
     {
-       return new GameSave() { id = slot_id, SayMyName = $"save{slot_id}.io", SceneID = 1, ProgressValue = 0, SecretNumber = new bool[Sekret.ILOSC_SEKRETOW] };
+       return new GameSave() { id = show.id, SayMyName = $"save{show.id}.io", SceneID = 1, ProgressValue = 0, SecretNumber = new bool[Sekret.ILOSC_SEKRETOW] };
     }
 
     public void AddSecret(int sekret_Id) => SecretNumber[sekret_Id] = true;
