@@ -42,9 +42,21 @@ public class Pochodnia : BetterHolding
         }
     }
 
+    protected override Result<object, string> Use()
+    {
+        var x = base.Use();
+        GetComponent<CapsuleCollider>().radius = .6f;
+        GetComponent<CapsuleCollider>().height = 2f;
+
+        return x;
+    }
+
     public override void LetGo()
     {
         base.LetGo();
+        GetComponent<CapsuleCollider>().radius = 1f;
+        GetComponent<CapsuleCollider>().height = 3f;
+
         Extinguish();
     }
 

@@ -57,6 +57,7 @@ public class BetterHolding : Interactable
 
     protected virtual Result<object, string> Use()
     {
+        controller.playerUI.crosshair.SetActive(false);
         isGrabbed = true;
         controller.interaction.enabled = false;
         rb.useGravity = false;
@@ -76,6 +77,7 @@ public class BetterHolding : Interactable
 
     public virtual void LetGo()
     {
+        controller.playerUI.crosshair.SetActive(true);
         isGrabbed = false;
         rb.useGravity = true;
         Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(), false);

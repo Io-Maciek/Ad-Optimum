@@ -9733,7 +9733,7 @@ CapsuleCollider:
   m_Radius: 1
   m_Height: 3
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2944148932499958793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9766,11 +9766,12 @@ MonoBehaviour:
   howFar: 1.8
   howDown: 0.2
   howRight: 0.75
-  sensitivity: 200
+  sensitivity: 500
   MaxDistance: 5
   overrideRotation: 1
   specialRotation: {x: 37, y: 5, z: 9}
   _debug: 0
+  IamFuming: 0
 --- !u!95 &2123197505
 Animator:
   serializedVersion: 3
