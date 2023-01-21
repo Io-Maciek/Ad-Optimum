@@ -17,6 +17,7 @@ public class CheckEndings : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
         GameInfo info = GameInfo.Read();
         if (info.Any())
         {

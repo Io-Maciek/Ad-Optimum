@@ -17,6 +17,8 @@ public class PlanszaInfo : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
+
         KontrolerAudio = GetComponent<AudioSource>();
         SavingTrigger last_seen;
         try
