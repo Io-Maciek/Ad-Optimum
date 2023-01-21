@@ -93,6 +93,12 @@ public class OpcjeMenus : MonoBehaviour
 
         fxChange(1f);
         fxSlider.value = 1.0f;
+
+        minimizeChanged(false);
+        minimizeScreen.isOn = false;
+
+        resolutionChange(0);
+        dropdownResolution.value = 0;
     }
 
 

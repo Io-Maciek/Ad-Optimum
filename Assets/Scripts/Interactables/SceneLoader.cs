@@ -10,10 +10,25 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            ApplicationModelInfo.GameSave.ProgressValue = 0;
-            ApplicationModelInfo.GameSave.SceneID++;
-            ApplicationModelInfo.GameSave.Save();
-            SceneManager.LoadSceneAsync((int)ApplicationModelInfo.GameSave.SceneID);
+            var _c = other.GetComponent < Controller > ();
+
+            _c.StartCoroutine("CloseEye", 1.0f);
+            StartCoroutine("load", _c);
+
+
         }
+    }
+
+    IEnumerator load(Controller _c)
+    {
+        _c.movement.enabled = false;
+        _c.mouseMovement.enabled = false;
+        yield return _c.StartCoroutine("CloseEye", 1.0f);
+        _c.movement.enabled = true;
+        _c.mouseMovement.enabled = true;
+        ApplicationModelInfo.GameSave.ProgressValue = 0;
+        ApplicationModelInfo.GameSave.SceneID++;
+        ApplicationModelInfo.GameSave.Save();
+        SceneManager.LoadSceneAsync((int)ApplicationModelInfo.GameSave.SceneID);
     }
 }
