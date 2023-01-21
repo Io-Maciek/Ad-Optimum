@@ -10,7 +10,10 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            SceneManager.LoadSceneAsync((int)ApplicationModelInfo.GameSave.SceneID + 1);
+            ApplicationModelInfo.GameSave.ProgressValue = 0;
+            ApplicationModelInfo.GameSave.SceneID++;
+            ApplicationModelInfo.GameSave.Save();
+            SceneManager.LoadSceneAsync((int)ApplicationModelInfo.GameSave.SceneID);
         }
     }
 }
