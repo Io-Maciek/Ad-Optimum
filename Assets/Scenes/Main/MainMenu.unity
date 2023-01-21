@@ -830,6 +830,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveChooser2
       objectReference: {fileID: 0}
+    - target: {fileID: 4364370988693099505, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364370988693099505, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364370988693099505, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364370988693099505, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364370988693099505, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 8421496201601069219, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
       propertyPath: id
       value: 1
@@ -1058,7 +1078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4364370988637300905, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
       propertyPath: m_Text
-      value: Zapis 1
+      value: Zapis 3
       objectReference: {fileID: 0}
     - target: {fileID: 4364370988693099468, guid: d459c65a729e2c04fabe1949b9cc7f74, type: 3}
       propertyPath: m_Pivot.x

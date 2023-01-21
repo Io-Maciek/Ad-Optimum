@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SavesLoader : MonoBehaviour
@@ -17,11 +18,14 @@ public class SavesLoader : MonoBehaviour
     void back()
     {
         transform.parent.Find("Main").gameObject.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(EventSystem.current.firstSelectedGameObject);
         gameObject.SetActive(false);
     }
 
     public void New()
     {
+        EventSystem.current.SetSelectedGameObject(transform.Find("goback").gameObject);
+
         saves = GetComponentsInChildren<SaveShow>().OrderBy(x => x.id).ToArray();
         var io = new IoGameSerialier();
         var loaded = io.Read().OrderBy(x => x.id).ToArray();
@@ -43,6 +47,8 @@ public class SavesLoader : MonoBehaviour
 
     public void Load()
     {
+        EventSystem.current.SetSelectedGameObject(transform.Find("goback").gameObject);
+
         saves = GetComponentsInChildren<SaveShow>().OrderBy(x => x.id).ToArray();
         var io = new IoGameSerialier();
         var loaded = io.Read().OrderBy(x => x.id).ToArray();
