@@ -12,10 +12,10 @@ public class MeltIceActivator : MonoBehaviour
         var x = other.GetComponent<Pochodnia>();
         if (x != null && x.IamFuming)
         {
-            if (GetComponent<Animator>().enabled)
-            {
-                GetComponent<Animator>().enabled = false;
-            }
+            if (GetComponent<Animator>()!=null)
+                if(GetComponent<Animator>().enabled)
+                    GetComponent<Animator>().enabled = false;
+            
 
             transform.localScale = new Vector3(transform.localScale.x - (Mathf.Abs(czyZmiejszac.x) * Time.deltaTime),
                                                 transform.localScale.y - (Mathf.Abs(czyZmiejszac.y) * Time.deltaTime),
