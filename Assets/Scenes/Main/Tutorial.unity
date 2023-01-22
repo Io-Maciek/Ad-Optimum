@@ -34022,7 +34022,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854051595}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3b73a56aa14fcf9449ea5c5330f84519, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -49242,6 +49242,22 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5e1388d9ae80df74b99b3665c13635bf, type: 3}
+    - target: {fileID: 4871821806628539844, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871821806628539844, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871821806628539844, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871821806628539844, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7294341811591724461, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
       propertyPath: playerUI
       value: 
@@ -81698,7 +81714,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006647790}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3b73a56aa14fcf9449ea5c5330f84519, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.7430932

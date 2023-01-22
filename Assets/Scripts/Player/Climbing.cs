@@ -15,6 +15,7 @@ public class Climbing : MonoBehaviour
         {
             canClimb = true;
             playerOBJ = coll.gameObject;
+            playerOBJ.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
@@ -23,6 +24,7 @@ public class Climbing : MonoBehaviour
         if (coll2.gameObject.tag == "Player")
         {
             canClimb = false;
+            playerOBJ.GetComponent<Rigidbody>().useGravity = true;
             playerOBJ = null;
         }
     }

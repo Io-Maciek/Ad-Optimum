@@ -22,10 +22,10 @@ public class Movement : MonoBehaviour
 
     [Space]
 
-    public bool TestAntiSlide = true;
 
     Rigidbody rb;
     new CapsuleCollider collider;
+    GameObject wallchecker;
 
     public bool OnGround { get; private set; }
 
@@ -34,11 +34,18 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         collider = GetComponent<CapsuleCollider>();
+        wallchecker = transform.Find("wallcheck").gameObject;
     }
 
     private void FixedUpdate()
     {
         OnGround = IsOnGround();
+
+        if (Mathf.Approximately(rb.velocity.x, 0.0f) || Mathf.Approximately(rb.velocity.y, 0.0f) || Mathf.Approximately(rb.velocity.z, 0.0f))
+        {
+            wallchecker.transform.rotation = Quaternion.LookRotation(rb.velocity);
+            wallchecker.transform.localPosition = wallchecker.transform.forward * -0.5f;
+        }
     }
 
     void Update()
@@ -56,11 +63,18 @@ public class Movement : MonoBehaviour
             speedOfThatBoy = normalSpeed + runAddition * Input.GetAxisRaw("Sprint");
         }
 
-        Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
 
 
-        rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
 
+
+
+        if (!wallchecker.GetComponent<WallCheck>().DotykaSciany)
+        {
+            Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
+            rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
+        }
+        
+        
 
 
         JumpCheck();
@@ -109,19 +123,4 @@ public class Movement : MonoBehaviour
 
         return false;
     }
-
-    /*
-        bool dotyka = false;
-        private void OnCollisionEnter(Collision collision)
-        {
-            dotyka = true;
-            var x = Vector3.Dot(transform.forward, collision.transform.position - transform.position);
-            Debug.Log(x);
-        }
-
-        private void OnCollisionExit(Collision collision)
-        {
-            dotyka = false;
-        }*/
-
 }
