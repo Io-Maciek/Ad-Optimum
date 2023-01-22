@@ -31811,6 +31811,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4315472703202872029, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_HorizontalFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337983181599417840, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224178267769346978, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271272806350707691, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 44.583332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584014232084205998, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6811089801389183402, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -31897,6 +31917,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6811089801389183403, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102182012164417377, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102182012164417377, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102182012164417377, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102182012164417377, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 44.583332
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102182012164417377, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102182012164417377, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.291666
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749870283641311643, guid: a072e2616ea7f0d4eb2e4ea6f28d35d0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -75347,7 +75395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Narracja: {fileID: 8300000, guid: f789cbb9601cc7d4d9da5386fc574d51, type: 3}
   KtoMowi: W toalecie
-  Text: "No bo w sensie, cebule maj\u0105 warsty... i ogry maj\u0105 warstwy..."
+  Text: "No bo w sensie, cebule maj\u0105 warstwy... i ogry maj\u0105 warstwy..."
   TylkoPierwszyRaz: 1
 --- !u!114 &1861319901
 MonoBehaviour:

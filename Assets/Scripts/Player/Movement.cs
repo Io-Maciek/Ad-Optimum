@@ -41,11 +41,8 @@ public class Movement : MonoBehaviour
     {
         OnGround = IsOnGround();
 
-        if (Mathf.Approximately(rb.velocity.x, 0.0f) || Mathf.Approximately(rb.velocity.y, 0.0f) || Mathf.Approximately(rb.velocity.z, 0.0f))
-        {
-            wallchecker.transform.rotation = Quaternion.LookRotation(rb.velocity);
-            wallchecker.transform.localPosition = wallchecker.transform.forward * -0.5f;
-        }
+        /* wallchecker.transform.rotation = Quaternion.LookRotation(rb.velocity);
+         wallchecker.transform.localPosition = wallchecker.transform.forward * -0.5f;*/
     }
 
     void Update()
@@ -68,13 +65,13 @@ public class Movement : MonoBehaviour
 
 
 
-        if (!wallchecker.GetComponent<WallCheck>().DotykaSciany)
-        {
-            Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
-            rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
-        }
-        
-        
+        /*if (!wallchecker.GetComponent<WallCheck>().DotykaSciany)
+        {*/
+        Vector2 newVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speedOfThatBoy);
+        rb.velocity = transform.rotation * new Vector3(newVelocity.x, rb.velocity.y, newVelocity.y);
+        /*}*/
+
+
 
 
         JumpCheck();
