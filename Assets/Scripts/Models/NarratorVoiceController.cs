@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,15 @@ namespace Assets.Scripts.Models
         // somehow do caption
 
         public AudioClip Narracja;
-        public bool TylkoPierwszyRaz;
-        bool _was_heard = false;
 
+        public string KtoMowi;
+        public string Text;
+        [Space]
+        public bool TylkoPierwszyRaz;
+
+        public bool _was_heard { get; private set; } = false;
         protected PlanszaInfo _planszaInfo;
+
         public virtual void Start()
         {
             _planszaInfo = FindObjectOfType<PlanszaInfo>();
@@ -42,24 +48,41 @@ namespace Assets.Scripts.Models
         /// </returns>
         public int Play()
         {
-            if (TylkoPierwszyRaz)
+            if (!IS_PLAYING)
             {
-                if (!_was_heard)
+                if (TylkoPierwszyRaz)
+                {
+                    if (!_was_heard)
+                    {
+                        var czyPrzerwaloPoprzedni = _planszaInfo.KontrolerAudio.isPlaying;
+                        _planszaInfo.ChangeAudio(Narracja);
+                        _planszaInfo.p_controller.playerUI.SetText($"{KtoMowi}: {Text}");
+                        StartCoroutine("_off");
+                        return czyPrzerwaloPoprzedni ? 1 : 0;
+                    }
+                }
+                else
                 {
                     var czyPrzerwaloPoprzedni = _planszaInfo.KontrolerAudio.isPlaying;
                     _planszaInfo.ChangeAudio(Narracja);
-                    _was_heard = true;
+                    _planszaInfo.p_controller.playerUI.SetText($"{KtoMowi}: {Text}");
+                    StartCoroutine("_off");
                     return czyPrzerwaloPoprzedni ? 1 : 0;
                 }
             }
-            else
-            {
-                var czyPrzerwaloPoprzedni = _planszaInfo.KontrolerAudio.isPlaying;
-                _planszaInfo.ChangeAudio(Narracja);
-                return czyPrzerwaloPoprzedni ? 1 : 0;
-            }
 
             return -1;
+        }
+
+
+        public bool IS_PLAYING { get; private set; } = false;
+        IEnumerator _off()
+        {
+            IS_PLAYING = true;
+            yield return new WaitForSeconds(Narracja.length + 1);
+            _planszaInfo.p_controller.playerUI.SetOff();
+            IS_PLAYING = false;
+            _was_heard = true;
         }
     }
 }

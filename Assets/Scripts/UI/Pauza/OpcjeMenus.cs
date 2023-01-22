@@ -9,6 +9,7 @@ public class OpcjeMenus : MonoBehaviour
 {
     Slider muzykaSlider;
     Slider fxSlider;
+    Slider narrator;
     Controller muzykaAudio;
     FX[] fxMusic;
     Toggle minimizeScreen;
@@ -40,6 +41,16 @@ public class OpcjeMenus : MonoBehaviour
             fx.Set(fxSlider.value);
         }
 
+
+        narrator = transform.Find("narratorSlider").GetComponent<Slider>();
+        narrator.onValueChanged.AddListener(narratorChanged);
+        narrator.value = PlayerPrefs.GetFloat("narrator", 1.0f);
+        foreach (var item in FindObjectsOfType<NarratorVoice>())
+        {
+            item.Set(narrator.value);
+        }
+
+
         transform.Find("btnPrzywroc").GetComponent<Button>().onClick.AddListener(domyslne);
 
 
@@ -65,7 +76,18 @@ public class OpcjeMenus : MonoBehaviour
         Screen.SetResolution(w, h,!minimizeScreen.isOn, fps);
         dropdownResolution.onValueChanged.AddListener(resolutionChange);
         dropdownResolution.value = indexRes;
+
     }
+
+    void narratorChanged(float newVal)
+    {
+        PlayerPrefs.SetFloat("narrator", newVal);
+        foreach (var item in FindObjectsOfType<NarratorVoice>())
+        {
+            item.Set(newVal);
+        }
+    }
+
 
     void resolutionChange(int index)
     {
@@ -99,6 +121,9 @@ public class OpcjeMenus : MonoBehaviour
 
         resolutionChange(0);
         dropdownResolution.value = 0;
+
+        narratorChanged(1.0f);
+        narrator.value = 1.0f;
     }
 
 

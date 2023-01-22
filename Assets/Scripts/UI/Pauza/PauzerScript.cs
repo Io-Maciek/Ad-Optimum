@@ -39,6 +39,7 @@ public class PauzerScript : MonoBehaviour
                 _temp_menu = Instantiate(menuPauzyPrefab);
                 Cursor.lockState = CursorLockMode.Confined;
                 playerController.playerUI.gameObject.SetActive(false);
+                FindObjectOfType<NarratorVoice>().audio.Pause();
 
                 break;
 
@@ -52,6 +53,7 @@ public class PauzerScript : MonoBehaviour
                 Destroy(_temp_menu);
                 Cursor.lockState = CursorLockMode.Locked;
                 playerController.playerUI.gameObject.SetActive(true);
+                FindObjectOfType<NarratorVoice>().audio.UnPause();
 
                 break;
         }

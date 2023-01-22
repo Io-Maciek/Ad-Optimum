@@ -7,13 +7,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlanszaInfo : MonoBehaviour
+public class PlanszaInfo : NarratorVoice
 {
     public uint ProgressValue { get; private set; } = 0;
     public List<SavingTrigger> EYE_OF_THE_TRIGGER; 
 
     public AudioSource KontrolerAudio { get; private set; }
-    Controller p_controller;
+    public Controller p_controller;
 
     void Start()
     {

@@ -14,7 +14,7 @@ public class BetterHolding : Interactable
     protected Controller controller;
     protected Rigidbody rb;
 
-    protected bool isGrabbed = false;
+    public bool isGrabbed { get; private set; } = false;
     bool keyDown = false;
 
 
