@@ -6,6 +6,7 @@ public class CheckEndings : MonoBehaviour
 {
     public GameObject endingPanel;
     public GameObject[] endingBadges;
+    public GameObject bgText;
     void Awake()
     {
         endingPanel.SetActive(false);
@@ -13,6 +14,7 @@ public class CheckEndings : MonoBehaviour
         {
             end.SetActive(false);
         }
+        bgText.SetActive(false);
     }
 
     private void Start()
@@ -21,6 +23,7 @@ public class CheckEndings : MonoBehaviour
         GameInfo info = GameInfo.Read();
         if (info.Any())
         {
+            bgText.SetActive(true);
             endingPanel.SetActive(true);
             for (int i = 0; i < 3; i++)
             {
