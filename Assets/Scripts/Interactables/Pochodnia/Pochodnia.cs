@@ -7,6 +7,7 @@ public class Pochodnia : BetterHolding
     ParticleSystem[] _fire;
     Light _beam_me_up_scotty;
     public bool IamFuming = false;
+    public bool IsFiredUp = false;
     Animator anime;
 
     Vector3 vecTemp;
@@ -20,6 +21,10 @@ public class Pochodnia : BetterHolding
         anime = GetComponent<Animator>();
         temp = howRight;
         vecTemp = specialRotation;
+        if (IsFiredUp)
+        {
+            FireItUp();
+        }
     }
 
     public void FireItUp()

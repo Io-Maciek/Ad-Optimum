@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Activatable
+  - IceBlock
   layers:
   - Default
   - TransparentFX
