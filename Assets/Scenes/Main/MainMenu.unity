@@ -984,6 +984,7 @@ MonoBehaviour:
   - {fileID: 551583864}
   - {fileID: 1954425549}
   - {fileID: 1459930313}
+  bgText: {fileID: 1056198198}
 --- !u!114 &149018076
 MonoBehaviour:
   m_ObjectHideFlags: 0
