@@ -13,7 +13,7 @@ namespace Assets.Scripts.Models
     /// <para>Audio clip is inserted into <see cref="PlanszaInfo.KontrolerAudio"/> in method <see cref="Play"/> and overwrites current playing audio.</para>
     /// <para>Can be played only one if <see cref="TylkoPierwszyRaz"/> is set to true.</para>
     /// </summary>
-    public abstract class NarratorVoiceController : MonoBehaviour
+    public class NarratorVoiceController : MonoBehaviour
     {
         public AudioClip Narracja;
 
