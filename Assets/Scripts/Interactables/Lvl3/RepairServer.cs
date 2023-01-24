@@ -19,6 +19,7 @@ public class RepairServer : MonoBehaviour
         {
             server.GetComponent<MeshRenderer>().material = fixedMaterial;
             isRepaired = true;
+            other.GetComponent<PowerUpDesk>().ileNaprawione++;
         }
     }
 
