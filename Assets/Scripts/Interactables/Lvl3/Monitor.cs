@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Progress;
 
 public class Monitor : MonoBehaviour
@@ -167,13 +168,16 @@ public class Monitor : MonoBehaviour
 
         yield return new WaitForSeconds(5.75f - n[0].Narracja.length-1f);
         yield return playerController.CloseEye(1.0f);
+
+        yield return new WaitForSeconds(playerController.Camera.GetComponent<AudioSource>().clip.length - playerController.Camera.GetComponent<AudioSource>().time);
+        SceneManager.LoadSceneAsync(0);
     }
 
 
 
 
     bool start_timer = false;
-    float time_max = 2 * 60; // in seconds
+    float time_max = 2* 60; // in seconds
     private void Update()
     {
         if (start_timer)
@@ -189,10 +193,22 @@ public class Monitor : MonoBehaviour
             {
                 start_timer = false;
                 Debug.Log("Zakonczenie: Smierc");
-                GameInfo.SetEndToSeen(1);
-                // TODO zakoñczenie dwa
+
+                StartCoroutine("_end_death");
             }
         }
+    }
+
+    IEnumerator _end_death()
+    {
+        GameInfo.SetEndToSeen(1);
+
+        Controller playerController = GetComponentInChildren<Controller>();
+        playerController.mouseMovement.enabled = false;
+        playerController.movement.enabled = false;
+        yield return playerController.CloseEye(1.0f);
+
+        SceneManager.LoadSceneAsync(0);
     }
 
 
@@ -261,6 +277,8 @@ public class Monitor : MonoBehaviour
         _eye.GetComponent<Animator>().SetBool("close", true);
 
 
+        yield return new WaitForSeconds(playerController.Camera.GetComponent<AudioSource>().clip.length- playerController.Camera.GetComponent<AudioSource>().time);
+        SceneManager.LoadSceneAsync(0);
 
         // TODO dokonczenie zakonczenia
     }
