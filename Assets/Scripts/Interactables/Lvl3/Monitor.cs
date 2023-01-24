@@ -1,9 +1,12 @@
+using Assets.Scripts.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Monitor : MonoBehaviour
 {
@@ -22,6 +25,9 @@ public class Monitor : MonoBehaviour
     public AudioClip endingEpicMusic;
 
     public TextMesh[] textOdliczanie;
+
+
+    public List<Texture2D> loginImages;
 
     void Awake()
     {
@@ -62,14 +68,108 @@ public class Monitor : MonoBehaviour
     {
         Destroy(ekranMiddle);
         yield return new WaitForSeconds(3.5f);
-        //ekranMiddle = Instantiate(ekran, middle);
+        ekranMiddle = Instantiate(ekran, middle); // login
+
+        var temp = ekranMiddle.GetComponentsInChildren<InputChooser>();
+        foreach (var item in temp)
+        {
+            item.gameObject.SetActive(false);
+        }
+
+        foreach (var item in loginImages.GetRange(0,7))
+        {
+            ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", item);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.75f,1.25f));
+        }
+
+        foreach (var item in temp)
+        {
+            item.gameObject.SetActive(true);
+            item.IsImportant = true;
+        }
+
+
+
+
         start_timer = true;
-        // TODO zakoñczenie pierwsze
         foreach (var item in textOdliczanie)
         {
             item.gameObject.SetActive(true);
         }
     }
+
+    IEnumerator NextNormal()
+    {
+        GameInfo.SetEndToSeen(0);
+        FindObjectOfType<PauzerScript>().enabled = false;
+        Controller playerController = GetComponentInChildren<Controller>();
+
+        start_timer = false;
+        foreach (var item in ekranMiddle.GetComponentsInChildren<InputChooser>())
+        {
+            item.gameObject.SetActive(false);
+            item.IsImportant = false;
+        }
+
+        playerController.mouseMovement.enabled = false;
+        playerController.interaction.enabled = false;
+        playerController.Camera.transform.LookAt(middle);
+        playerController.playerUI.crosshair.SetActive(false);
+
+
+        playerController.Camera.GetComponent<AudioSource>().Stop();
+        playerController.Camera.GetComponent<AudioSource>().clip = endingEpicMusic;
+        playerController.Camera.GetComponent<AudioSource>().Play();
+
+        yield return new WaitForSeconds(0.25f);
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[12]);
+        yield return new WaitForSeconds(2.5f);
+
+
+
+
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[7]);//kamer.
+        yield return new WaitForSeconds(0.25f);
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[8]);//kamer..
+        foreach (var item in textOdliczanie)
+        {
+            item.gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(0.5f);
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[9]);//kamer...
+        yield return new WaitForSeconds(1f);
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[10]);//kamer [x]
+        yield return new WaitForSeconds(1.5f);
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[11]);//dyskrecja
+        yield return new WaitForSeconds(3f);
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[12]);//czarny ekrn
+        yield return new WaitForSeconds(1.5f);
+
+        ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[13]);//kam1
+        
+
+
+        var l = Instantiate(StartUpEkran, left);
+        l.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[14]);//kam2
+        var l2= Instantiate(StartUpEkran, right);
+        l2.GetComponent<Renderer>().material.SetTexture("_MainTex", loginImages[15]);//kam3
+
+
+        // NARRACJA
+        yield return new WaitForSeconds(1f);
+        var n = GetComponents<NarratorVoiceController>().OrderBy(n => n.Narracja.name).ToArray();
+        n[0].Play();
+        yield return new WaitForSeconds(n[0].Narracja.length+1);
+        n[1].Play();
+
+        ///////////
+
+
+        yield return new WaitForSeconds(5.75f - n[0].Narracja.length-1f);
+        yield return playerController.CloseEye(1.0f);
+    }
+
+
 
 
     bool start_timer = false;
@@ -89,6 +189,7 @@ public class Monitor : MonoBehaviour
             {
                 start_timer = false;
                 Debug.Log("Zakonczenie: Smierc");
+                GameInfo.SetEndToSeen(1);
                 // TODO zakoñczenie dwa
             }
         }

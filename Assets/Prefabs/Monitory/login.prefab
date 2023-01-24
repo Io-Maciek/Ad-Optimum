@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsImportant: 1
-  nextEkran: {fileID: 0}
+  nextEkran: {fileID: 9140568725673975463, guid: fbdc01055b2d7c0438c993aff1d07cb6, type: 3}
 --- !u!1 &9140568725673975463
 GameObject:
   m_ObjectHideFlags: 0
