@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/IceLevel.unity
     guid: 192170a572e7bd24a87dcc0e929cbf14
+  - enabled: 1
+    path: Assets/Scenes/Main/ServerRoom.unity
+    guid: 933db24f23e5a6e4795146cadbb1dc0a
   m_configObjects: {}
