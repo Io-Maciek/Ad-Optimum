@@ -9,7 +9,7 @@ namespace Assets.Scripts.EasterEggs
 {
     public abstract class Sekret : MonoBehaviour
     {
-        public const int ILOSC_SEKRETOW = 1;
+        public const int ILOSC_SEKRETOW = 2;
 
 
         public bool seen { get; set; }= false;

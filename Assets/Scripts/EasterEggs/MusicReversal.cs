@@ -10,6 +10,8 @@ public class MusicReversal : Sekret
     float prev;
     float vol;
 
+    public bool changeSize = true;
+
     public override void Activate()
     {
         ApplicationModelInfo.GameSave.AddSecret(sekret_id);
@@ -18,7 +20,8 @@ public class MusicReversal : Sekret
     public override void Close()
     {
         GetComponent<Collider>().isTrigger = false;
-        GetComponent<BoxCollider>().size = Vector3.one * 2;
+        if(changeSize)
+            GetComponent<BoxCollider>().size = Vector3.one * 2;
     }
 
     public override void Open()
