@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using UnityEngine;
 
@@ -19,6 +21,7 @@ public class Monitor : MonoBehaviour
     public List<Texture2D> secretBootImages;
     public AudioClip endingEpicMusic;
 
+    public TextMesh[] textOdliczanie;
 
     void Awake()
     {
@@ -38,7 +41,7 @@ public class Monitor : MonoBehaviour
 
             foreach (var texture in bootImages.GetRange(0, bootImages.Count - 1))
             {
-                yield return new WaitForSeconds(Random.Range(0.75f, 1.5f));
+                yield return new WaitForSeconds(UnityEngine.Random.Range(0.75f, 1.5f));
                 ekranMiddle.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
             }
 
@@ -55,11 +58,40 @@ public class Monitor : MonoBehaviour
 
 
 
-    public IEnumerator NextMiddle(GameObject ekran)
+    public IEnumerator EndNormal(GameObject ekran)
     {
         Destroy(ekranMiddle);
         yield return new WaitForSeconds(3.5f);
-        ekranMiddle = Instantiate(ekran, middle);
+        //ekranMiddle = Instantiate(ekran, middle);
+        start_timer = true;
+        // TODO zakoñczenie pierwsze
+        foreach (var item in textOdliczanie)
+        {
+            item.gameObject.SetActive(true);
+        }
+    }
+
+
+    bool start_timer = false;
+    float time_max = 2 * 60; // in seconds
+    private void Update()
+    {
+        if (start_timer)
+        {
+            time_max -= Time.deltaTime;
+            TimeSpan t = TimeSpan.FromSeconds(time_max);
+            foreach (var item in textOdliczanie)
+            {
+                item.text = t.ToString(@"mm\:ss\:ff");
+            }
+
+            if (time_max <= 0f)
+            {
+                start_timer = false;
+                Debug.Log("Zakonczenie: Smierc");
+                // TODO zakoñczenie dwa
+            }
+        }
     }
 
 
@@ -82,7 +114,6 @@ public class Monitor : MonoBehaviour
         playerController.Camera.transform.LookAt(middle);
         playerController.Camera.GetComponent<Animator>().SetBool("setEnd", true);
         playerController.playerUI.gameObject.SetActive(false);
-        // TODO paski cutscenki u góry i do³u
         GameInfo.SetEndToSeen(2);
 
 

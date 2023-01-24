@@ -14,8 +14,9 @@ public class LogInDisplay : Interactable
         if(monitor == null)
         {
             monitor = transform.parent.parent.parent.GetComponent<Monitor>();
-            ApplicationModelInfo.GameSave.SecretNumber[0] = true;
+            //ApplicationModelInfo.GameSave.SecretNumber[0] = true;
         }
+
 
         if( ApplicationModelInfo.GameSave.SecretNumber.All(s => s == true)) // ukryte zakoñczenie
         {
@@ -25,7 +26,7 @@ public class LogInDisplay : Interactable
         else // normalne
         {
             Debug.Log("Normalne");
-            monitor.StartCoroutine("NextMiddle", nextEkran);
+            monitor.StartCoroutine("EndNormal", nextEkran);
         }
 
 
