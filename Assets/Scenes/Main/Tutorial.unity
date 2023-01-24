@@ -38092,6 +38092,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4309171512014804, guid: 3a0a30c4014e71342ae79edf0a0e737a, type: 3}
   m_PrefabInstance: {fileID: 358494307}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &959827612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7294341811591724461, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+  m_PrefabInstance: {fileID: 1217480774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacf97eb2efa50744b867fac69410ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &959922874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72390,6 +72401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlanszaInfo_
       objectReference: {fileID: 0}
+    - target: {fileID: 3505556328938759611, guid: 4b042220560424d4ea36ce9a08aea572, type: 3}
+      propertyPath: p_controller
+      value: 
+      objectReference: {fileID: 959827612}
     - target: {fileID: 3505556328938759611, guid: 4b042220560424d4ea36ce9a08aea572, type: 3}
       propertyPath: EYE_OF_THE_TRIGGER.Array.size
       value: 2

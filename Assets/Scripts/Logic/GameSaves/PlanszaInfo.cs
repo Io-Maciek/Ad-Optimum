@@ -13,7 +13,7 @@ public class PlanszaInfo : NarratorVoice
     public List<SavingTrigger> EYE_OF_THE_TRIGGER; 
 
     public AudioSource KontrolerAudio { get; private set; }
-    public Controller p_controller;
+    public Controller p_controller { get; private set; }
 
     void Start()
     {
