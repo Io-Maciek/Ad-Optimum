@@ -37,7 +37,8 @@ public class Interaction : MonoBehaviour
                 obj.GetComponent<Interactable>().Action(gameObject).IgnoreOk().Match(
                   (err) =>
                   {
-                      Debug.LogWarning(err);
+                      controller.playerUI.SetText(err, 1.5f);
+                      //Debug.LogWarning(err);
                   });
             }
         }

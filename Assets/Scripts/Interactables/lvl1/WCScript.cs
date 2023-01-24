@@ -13,6 +13,10 @@ public class WCScript : Interactable
     papier6 p6;
     papier7 p7;
 
+    public Transform[] PlaceForPapier;
+    public GameObject PapierPrefab;
+    public GameObject FusePrefab;
+
     protected override void Awake()
     {
         base.Awake();
@@ -35,7 +39,14 @@ public class WCScript : Interactable
         if (!_got)
         {
             if (!p1._was_heard)
+            {
+                if (!p1.IS_PLAYING)
+                {
+                    int r = Random.Range(0, PlaceForPapier.Length);
+                    Instantiate(PapierPrefab, PlaceForPapier[r]);
+                }
                 p1.Play();
+            }
             else
                 p2.Play();
         }
@@ -47,9 +58,9 @@ public class WCScript : Interactable
                 p5.Play();
             else if (!p6._was_heard)
             {
-                /*
-                 * TODO GIVE ITEM TO END LVL
-                 */
+                IsImportant = false;
+                if(!p6.IS_PLAYING)
+                    StartCoroutine("_give");
                 p6.Play();
             }
             else
@@ -65,7 +76,7 @@ public class WCScript : Interactable
     {
         if(!(p1.IS_PLAYING || p2.IS_PLAYING))
         {
-            if (other.gameObject.name == "Papier" && other.GetComponent<BetterHolding>().isGrabbed)
+            if (other.gameObject.name == "Papier(Clone)" && other.GetComponent<BetterHolding>().isGrabbed)
             {
                 _got = true;
                 p3.Play();
@@ -73,5 +84,12 @@ public class WCScript : Interactable
                 Destroy(other.gameObject);
             }
         }
+    }
+
+    IEnumerator _give()
+    {
+        yield return new WaitForSeconds(p6.Narracja.length-.5f);
+        var fuse = Instantiate(FusePrefab);
+        fuse.transform.position = transform.position + transform.forward*1.5f + Vector3.up*3+ transform.right*2;
     }
 }

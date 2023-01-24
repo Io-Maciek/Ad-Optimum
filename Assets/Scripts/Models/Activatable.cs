@@ -7,14 +7,12 @@ using Assets.Scripts.Models;
 /// <summary>
 /// Intended to use by an object <see cref="Activator"/> that fires the <see cref="SetTo(bool, object[])"/> method.
 /// </summary>
-public abstract class Activatable : MonoBehaviour
+public abstract class Activatable : MonoBehaviour, IActivatable
 {
     /// <value>
     /// Check status of this game object.
     /// </value>
     public bool IsActive { get; set; }
-
-
 
     /// <summary>
     /// Starts when some connected gameobject fires it with values <c>true</c> or <c>false</c>.

@@ -39,7 +39,7 @@ public class OrbActivate : Interactable
         }
         else
         {
-            return Result<object,string>.Err(wasEnabled.ToString());
+            return Result<object,string>.Err("Nie mogê ju¿ nic z tym zrobiæ.");
         }
     }
 

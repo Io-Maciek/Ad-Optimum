@@ -23,10 +23,23 @@ public class PlayerUI : MonoBehaviour
         textParent.SetActive(true);
     }
 
+    public void SetText(string text, float time)
+    {
+        StartCoroutine("_set_and_off_", (text, time));
+    }
+
     public void SetOff()
     {
         narracjaText.text = "";
         textParent.SetActive(false);
+    }
+
+
+    IEnumerator _set_and_off_((string,  float) options)
+    {
+        SetText(options.Item1);
+        yield return new WaitForSeconds(options.Item2);
+        SetOff();
     }
 
 }

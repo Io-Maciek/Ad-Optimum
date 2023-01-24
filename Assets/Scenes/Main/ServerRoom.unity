@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bf177d336264d064abb5a8eecde956c6, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a9de1b58b6ea5224e893989d68dd144c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3217,6 +3217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2659655286232598632, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fb1bd6e6d8496924c90947df6527ebb5, type: 3}
     - target: {fileID: 7294341811591724461, guid: 66d369d6ff12fb74086e9e8621cd9051, type: 3}
       propertyPath: playerUI
       value: 

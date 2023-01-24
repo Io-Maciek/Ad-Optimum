@@ -15,8 +15,6 @@ namespace Assets.Scripts.Models
     /// </summary>
     public abstract class NarratorVoiceController : MonoBehaviour
     {
-        // somehow do caption
-
         public AudioClip Narracja;
 
         public string KtoMowi;
