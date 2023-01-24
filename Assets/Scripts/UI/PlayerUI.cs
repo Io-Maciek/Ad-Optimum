@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,10 +29,20 @@ public class PlayerUI : MonoBehaviour
         StartCoroutine("_set_and_off_", (text, time));
     }
 
+    [Obsolete("Use 'SetOff(string compare)'")]
     public void SetOff()
     {
         narracjaText.text = "";
         textParent.SetActive(false);
+    }
+
+    public void SetOff(string compare)
+    {
+        if(narracjaText.text == compare)
+        {
+            narracjaText.text = "";
+            textParent.SetActive(false);
+        }
     }
 
 
@@ -39,7 +50,7 @@ public class PlayerUI : MonoBehaviour
     {
         SetText(options.Item1);
         yield return new WaitForSeconds(options.Item2);
-        SetOff();
+        SetOff(options.Item1);
     }
 
 }

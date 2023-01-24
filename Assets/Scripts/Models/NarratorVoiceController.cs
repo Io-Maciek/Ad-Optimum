@@ -78,7 +78,7 @@ namespace Assets.Scripts.Models
         {
             IS_PLAYING = true;
             yield return new WaitForSeconds(Narracja.length + 1);
-            _planszaInfo.p_controller.playerUI.SetOff();
+            _planszaInfo.p_controller.playerUI.SetOff($"{KtoMowi}: {Text}");
             IS_PLAYING = false;
             _was_heard = true;
         }
