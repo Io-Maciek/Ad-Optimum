@@ -10,11 +10,11 @@ public class wstalesNarr : NarratorVoiceController
     {
         if (!czyOdtworzono)
         {
-            if (_planszaInfo.ProgressValue == 0) { 
-            Debug.Log(_planszaInfo.KontrolerAudio);
-            Play();
-            czyOdtworzono = true;
+            if (_planszaInfo.ProgressValue == 0)
+            {
+                Play();
+                czyOdtworzono = true;
+            }
         }
-    }
     }
 }
