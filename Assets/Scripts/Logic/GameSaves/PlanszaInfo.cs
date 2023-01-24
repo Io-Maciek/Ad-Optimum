@@ -86,6 +86,9 @@ public class PlanszaInfo : NarratorVoice
             indexRes = 0;
         var res = resols[indexRes];
         Screen.SetResolution(res.width, res.height, !isOn, res.refreshRate);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

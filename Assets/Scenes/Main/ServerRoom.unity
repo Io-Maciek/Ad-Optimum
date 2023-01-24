@@ -7640,7 +7640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6723388290883465292, guid: 3128189481e6fda43b193f058e237ae0, type: 3}
       propertyPath: debugSkip
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6723388290883465292, guid: 3128189481e6fda43b193f058e237ae0, type: 3}
       propertyPath: loginImages.Array.size

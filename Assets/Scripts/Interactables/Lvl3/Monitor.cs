@@ -7,7 +7,6 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
 
 public class Monitor : MonoBehaviour
 {
@@ -279,7 +278,5 @@ public class Monitor : MonoBehaviour
 
         yield return new WaitForSeconds(playerController.Camera.GetComponent<AudioSource>().clip.length- playerController.Camera.GetComponent<AudioSource>().time);
         SceneManager.LoadSceneAsync(0);
-
-        // TODO dokonczenie zakonczenia
     }
 }
