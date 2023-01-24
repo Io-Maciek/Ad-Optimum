@@ -6,6 +6,7 @@ public class RepairServer : MonoBehaviour
 {
     GameObject server;
     public Material fixedMaterial;
+    bool isRepair = false;
 
     private void Start()
     {
@@ -14,9 +15,10 @@ public class RepairServer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "tablet (1)")
+        if (!isRepair && other.name == "tablet (1)")
         {
             server.GetComponent<MeshRenderer>().material = fixedMaterial;
+            isRepair = true;
         }
     }
 
