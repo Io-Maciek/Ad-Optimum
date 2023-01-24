@@ -7516,7 +7516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3342005403769843627, guid: 3128189481e6fda43b193f058e237ae0, type: 3}
       propertyPath: HaveEnergy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3950111016894216560, guid: 3128189481e6fda43b193f058e237ae0, type: 3}
       propertyPath: m_TagString
