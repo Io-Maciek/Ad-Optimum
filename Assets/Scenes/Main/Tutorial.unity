@@ -18280,6 +18280,7 @@ MonoBehaviour:
     Eeee czekaj chwil\u0119. Hmmmm. O! Mam! Dobra, przejd\u017A dalej to opowiem
     ci wi\u0119cej."
   TylkoPierwszyRaz: 1
+  MyszkaObj: {fileID: 661502647}
 --- !u!4 &486263252
 Transform:
   m_ObjectHideFlags: 0
@@ -26161,7 +26162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &661502648
 Transform:
   m_ObjectHideFlags: 0
