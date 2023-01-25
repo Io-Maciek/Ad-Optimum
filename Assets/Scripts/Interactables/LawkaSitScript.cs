@@ -44,7 +44,6 @@ public class LawkaSitScript : Interactable
         _c.mouseMovement.enabled = true;
 
 
-        //Debug.Log(transform.localEulerAngles.y-90);
         prev = _c.CameraLook(transform.localEulerAngles.y - 90);
 
 

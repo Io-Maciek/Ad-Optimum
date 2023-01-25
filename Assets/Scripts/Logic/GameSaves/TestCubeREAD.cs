@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Logic.GameSaves
 {
+    [Obsolete]
     public class TestCubeREAD : MonoBehaviour
     {
         private void Start()
@@ -17,7 +18,6 @@ namespace Assets.Scripts.Logic.GameSaves
             Time.timeScale = 1.0f;
 
 
-            // TODO real main menu with save files
             var io = new IoGameSerialier();
             foreach (var item in io.Read())
             {

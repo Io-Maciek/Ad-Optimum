@@ -103,14 +103,14 @@ public class PlanszaInfo : NarratorVoice
             ProgressValue = NewProgressValue;
             ApplicationModelInfo.GameSave.ProgressValue = ProgressValue;
             ApplicationModelInfo.GameSave.Save();
-            Debug.Log($"Updated to {ProgressValue}");
+            //Debug.Log($"Updated to {ProgressValue}");
             if (!FindObjectOfType<Controller>().playerUI.transform.Find("Loading").gameObject.activeSelf)
                 StartCoroutine("_loadAnim");
         }
         else
         {
             ApplicationModelInfo.GameSave.Save();
-            Debug.Log($"Progress just saved");
+            //Debug.Log($"Progress just saved");
         }
     }
 

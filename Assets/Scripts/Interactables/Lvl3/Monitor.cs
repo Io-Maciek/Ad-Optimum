@@ -192,8 +192,6 @@ public class Monitor : MonoBehaviour
             if (time_max <= 0f)
             {
                 start_timer = false;
-                Debug.Log("Zakonczenie: Smierc");
-
                 StartCoroutine("_end_death");
             }
         }

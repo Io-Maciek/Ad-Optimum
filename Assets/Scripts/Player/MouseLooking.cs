@@ -34,7 +34,6 @@ public class MouseLooking : MonoBehaviour
     {
         float prev = offset;
         float dif = rotationX - (transform.eulerAngles.y+offset);
-        //Debug.Log($"{transform.eulerAngles.y} + {offset} - {rotationX}  =  {dif}");
         offset = dif;
         return prev;
     }
