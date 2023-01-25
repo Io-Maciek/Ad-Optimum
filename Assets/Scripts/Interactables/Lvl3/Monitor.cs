@@ -168,13 +168,14 @@ public class Monitor : MonoBehaviour
         yield return new WaitForSeconds(5.75f - n[0].Narracja.length-1f);
         yield return playerController.CloseEye(1.0f);
 
+        _waiting = true;
         yield return new WaitForSeconds(playerController.Camera.GetComponent<AudioSource>().clip.length - playerController.Camera.GetComponent<AudioSource>().time);
         SceneManager.LoadSceneAsync(0);
     }
 
 
 
-
+    bool _waiting = false;
     bool start_timer = false;
     float time_max = 2* 60; // in seconds
     private void Update()
@@ -196,6 +197,15 @@ public class Monitor : MonoBehaviour
                 StartCoroutine("_end_death");
             }
         }
+
+        if (_waiting)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
+            {
+                SceneManager.LoadSceneAsync(0);
+            }
+        }
+
     }
 
     IEnumerator _end_death()
@@ -276,6 +286,7 @@ public class Monitor : MonoBehaviour
         _eye.GetComponent<Animator>().SetBool("close", true);
 
 
+        _waiting = true;
         yield return new WaitForSeconds(playerController.Camera.GetComponent<AudioSource>().clip.length- playerController.Camera.GetComponent<AudioSource>().time);
         SceneManager.LoadSceneAsync(0);
     }
